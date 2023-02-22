@@ -1,0 +1,91 @@
+@media (max-width: 991px) {
+    .responsive-mt {
+        margin-top: 0.9rem;
+    }
+
+    .responsive-nav-flex {
+        flex-direction: column;
+    }
+}
+
+.popup-wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000008d;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.popup-wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000008d;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.footer {
+    position: fixed;
+    width: 100vw;
+    height: 5vh;
+    bottom: 0;
+}
+
+nav {
+    z-index: 999;
+}
+
+#about-page p {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+#link-to-register-page,
+#link-to-login-page {
+    cursor: pointer;
+}
+
+#home-display-options button {
+    margin: 3px;
+}
+
+.carusel {
+    width: 70vw;
+    height: 70vh;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-container>img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.fade-in {
+    animation: fadein 1s ease forwards;
+}
+
+.fade-out {
+    animation: fadein 1s ease forwards reverse;
+}
+
+/* create animation called fadein */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
