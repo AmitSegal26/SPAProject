@@ -10,7 +10,13 @@ import showNewPopup from "./src/pages/HomePage.js";
 const navHomeLink = document.getElementById("nav-home-link");
 const navIconLink = document.getElementById("nav-icon-link");
 const page404BackBtn = document.getElementById("page404-to-home-link");
-const aboutBackBtn = document.getElementById("about-to-home-btn");
+const aboutToHomeCarouselBtn = document.getElementById(
+  "about-to-home-carousel-btn"
+);
+const aboutToHomeGalleryBtn = document.getElementById(
+  "about-to-home-gallery-btn"
+);
+const aboutToHomeListBtn = document.getElementById("about-to-home-list-btn");
 const navAboutLink = document.getElementById("nav-about-link");
 const navLoginLink = document.getElementById("nav-login-link");
 const navLogOutLink = document.getElementById("nav-logout-link");
@@ -51,8 +57,17 @@ navIconLink.addEventListener("click", () => {
 page404BackBtn.addEventListener("click", () => {
   handlePageChange(PAGES.HOME);
 });
-aboutBackBtn.addEventListener("click", () => {
+aboutToHomeCarouselBtn.addEventListener("click", () => {
   handlePageChange(PAGES.HOME);
+  document.getElementById("home-display-carousel-btn").click();
+});
+aboutToHomeGalleryBtn.addEventListener("click", () => {
+  handlePageChange(PAGES.HOME);
+  document.getElementById("home-display-gallery-btn").click();
+});
+aboutToHomeListBtn.addEventListener("click", () => {
+  handlePageChange(PAGES.HOME);
+  document.getElementById("home-display-list-btn").click();
 });
 loginCancelToHome.addEventListener("click", () => {
   handlePageChange(PAGES.HOME);

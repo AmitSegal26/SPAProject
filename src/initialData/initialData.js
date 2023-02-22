@@ -25,27 +25,11 @@ const createData = () => {
     ),
     new Picture(
       picId++,
-      "Beach Sunset",
-      "/public/assets/imgs/beach-couple.jpg",
-      "Kenny Death",
-      `A stunning photograph of a couple standing on a sandy beach at sunset. The couple is seen from behind, and they are standing close to each other, with their arms wrapped around each other's waist. They appear to be wearing casual clothes, and the woman has a sun hat on her head. The golden light of the setting sun is casting a warm glow on the scene, and the sky is filled with beautiful shades of orange, yellow, and pink. The water is calm and reflecting the colors of the sky, and there are a few boats and people visible in the distance. Overall, it's a beautiful and romantic scene that captures the tranquility and beauty of the beach at sunset.`,
-      10
-    ),
-    new Picture(
-      picId++,
       "Mysterious Eye",
       "/public/assets/imgs/color-eye.jpg",
       "John Wick",
       `A close-up of a young girl's eye as she looks directly into the camera. The eye is beautifully detailed and appears to be a bright, light blue color. The iris, the colored part of the eye, has several shades of blue, with darker lines radiating outwards from the pupil.`,
       20
-    ),
-    new Picture(
-      picId++,
-      "Beach Sunset",
-      "/public/assets/imgs/beach-couple.jpg",
-      "Kenny Death",
-      `A stunning photograph of a couple standing on a sandy beach at sunset. The couple is seen from behind, and they are standing close to each other, with their arms wrapped around each other's waist. They appear to be wearing casual clothes, and the woman has a sun hat on her head. The golden light of the setting sun is casting a warm glow on the scene, and the sky is filled with beautiful shades of orange, yellow, and pink. The water is calm and reflecting the colors of the sky, and there are a few boats and people visible in the distance. Overall, it's a beautiful and romantic scene that captures the tranquility and beauty of the beach at sunset.`,
-      10
     ),
   ];
   return picArr;
