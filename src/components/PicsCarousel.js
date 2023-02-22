@@ -8,6 +8,12 @@ const initialPicsCarousel = (picsArrFromHomePage) => {
   createCarousel();
 };
 
+//BONUS POINTS FOR AUTOMATIC SLIDES
+let nextBtn = document.getElementById("home-carousel-next-btn");
+setInterval(() => {
+  nextBtn.click();
+}, 6000); /* activates an action after the timer goes off, and repeats the written */
+
 const updatePicsCarousel = (picsArrFromHomePage) => {
   picsArr = picsArrFromHomePage;
   createCarousel();

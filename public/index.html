@@ -160,7 +160,7 @@
                         placeholder="Search" aria-label="Search">
                 </div>
                 <!-- GALLERY -->
-                <div id="home-display-gallery" class="">
+                <div id="home-display-gallery" class="d-none">
                     <div id="home-gallery-content" class="row row-cols-1 row-cols-md-3 g-4">GALLERY</div>
                 </div>
                 <!-- LIST -->
@@ -168,8 +168,8 @@
                     <ul class="list-group" id="home-list-content">LIST</ul>
                 </div>
                 <!-- CAROUSEL -->
-                <div id="home-display-carousel" class="d-none">
-                    <div id="carouselExampleDark" class="carousel carousel-dark slide ">
+                <div id="home-display-carousel" class="">
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide">
                         <div id="home-inside-carousel" class="carousel-inner">
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
@@ -180,7 +180,7 @@
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
                             data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                            <span id="home-carousel-next-btn" class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
