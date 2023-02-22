@@ -18,15 +18,6 @@
     z-index: 999;
 }
 
-.popup-wrapper {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0000008d;
-    top: 0;
-    left: 0;
-    z-index: 999;
-}
 
 .footer {
     position: fixed;
@@ -53,39 +44,7 @@ nav {
     margin: 3px;
 }
 
-.carusel {
-    width: 70vw;
-    height: 70vh;
-}
-
-.img-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.img-container>img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-
-.fade-in {
-    animation: fadein 1s ease forwards;
-}
-
-.fade-out {
-    animation: fadein 1s ease forwards reverse;
-}
-
-/* create animation called fadein */
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+#home-actual-popup {
+    height: 90vh;
+    overflow-y: scroll;
 }
