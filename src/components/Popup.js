@@ -1,5 +1,6 @@
 import Picture from "../models/Picture.js";
 import getNextId from "../services/getNextId.js";
+import validateImage from "../validation/validateImage.js";
 
 let selectedPic, editOrAddPicFunction;
 const popupImage = document.getElementById("popup-image");
@@ -9,6 +10,7 @@ const popupPrice = document.getElementById("popup-price");
 const popupImageUrl = document.getElementById("popup-image-url");
 const popupCredit = document.getElementById("popup-credit");
 const PopupWrapper = document.getElementById("home-popup-wrapper");
+const saveBtn = document.getElementById("popup-save-btn");
 const initPopup = (selectedPicFromHomePage, editPicFunctionFromHomePage) => {
   /*
       set data from selectedPic to html
@@ -49,7 +51,11 @@ window.addEventListener("load", () => {
     hidePopup();
   });
   //save changes
-  document.getElementById("popup-save-btn").addEventListener("click", () => {
+  saveBtn.addEventListener("click", () => {
+    if (validateImage(popupImageUrl.value).length) {
+      //has errors
+      return;
+    }
     selectedPic.name = popupName.value;
     selectedPic.credit = popupCredit.value;
     selectedPic.description = popupDescription.value;
@@ -58,8 +64,18 @@ window.addEventListener("load", () => {
     editOrAddPicFunction(selectedPic);
     hidePopup();
   });
+  //reggex for image link
   popupImageUrl.addEventListener("input", () => {
     popupImage.src = popupImageUrl.value;
+    if (validateImage(popupImageUrl.value).length) {
+      //has errors
+      saveBtn.disabled = true;
+      popupImageUrl.classList.add("is-invalid");
+    } else {
+      //no errors
+      saveBtn.disabled = false;
+      popupImageUrl.classList.remove("is-invalid");
+    }
   });
 });
 
