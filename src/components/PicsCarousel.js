@@ -22,7 +22,7 @@ const updatePicsCarousel = (picsArrFromHomePage) => {
 const createItem = (name, img, description, credit, active = false) => {
   return `
   <div class="carousel-item ${active ? "active" : ""}">
-  <img src=${img} alt=${name}>
+  <img for="carousel-items" src=${img} alt=${name}>
   <div class="carousel-caption d-none d-md-block text-light">
     <h5>${name}</h5>
     <h6>By ${credit}</h6>
