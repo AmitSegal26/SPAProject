@@ -70,16 +70,16 @@ const createItem = (id, name, img, credit, description, price) => {
       />
       <div class="card-body">
         <h4 class="card-name">${name}</h4>
-        <h5 class="card-name">By${credit}</h5>
+        <h5 class="card-name">By ${credit}</h5>
         <p class="card-text">
           ${description}
         </p>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">${price}</li>
-      </ul>
-      <div class="card-body d-flex">
-        <button type="button" class="btn btn-success w-100"><i class="bi bi-cash-coin"></i>
+      
+      <div class="card-body d-flex flex-column-reverse"><ul class="list-group list-group-flush">
+      <li class="list-group-item">$ ${price}</li>
+    </ul>
+        <button type="button" class="btn btn-success"><i class="bi bi-cash-coin"></i>
           Purchase
         </button>
         ${isBusiness ? businessBtns : ""}
