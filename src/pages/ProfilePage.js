@@ -115,7 +115,6 @@ profilePasswordBtn.addEventListener("click", () => {
   });
   inputIsBusiness.addEventListener("change", () => {
     isBusiness = !isBusiness;
-    console.log("isBusiness is now " + isBusiness);
   });
   // ///////////////////////////////////////////////
 

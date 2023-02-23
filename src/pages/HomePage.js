@@ -38,16 +38,19 @@ displayGalleryBtn.addEventListener("click", () => {
   galleryDisplay.classList.remove("d-none");
   listDisplay.classList.add("d-none");
   carouselDisplay.classList.add("d-none");
+  document.getElementById("home-search").classList.remove("d-none");
 });
 displayListBtn.addEventListener("click", () => {
   galleryDisplay.classList.add("d-none");
   listDisplay.classList.remove("d-none");
   carouselDisplay.classList.add("d-none");
+  document.getElementById("home-search").classList.remove("d-none");
 });
 displayCarouselBtn.addEventListener("click", () => {
   galleryDisplay.classList.add("d-none");
   listDisplay.classList.add("d-none");
   carouselDisplay.classList.remove("d-none");
+  document.getElementById("home-search").classList.add("d-none");
 });
 document
   .getElementById("home-display-sort-upwards")
