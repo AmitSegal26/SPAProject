@@ -32,6 +32,7 @@ window.addEventListener("load", () => {
   initialPicsList(picsArr, isBusiness, deletePic, showPopup);
   initialPicsGallery(picsArr, isBusiness, deletePic, showPopup);
   initialPicsCarousel(picsArr, isBusiness, deletePic);
+  document.getElementById("home-search").classList.add("d-none");
 });
 
 displayGalleryBtn.addEventListener("click", () => {

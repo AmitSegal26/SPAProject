@@ -53,8 +53,8 @@ window.addEventListener("load", () => {
   //save changes
   saveBtn.addEventListener("click", () => {
     if (validateImage(popupImageUrl.value).length) {
-      //has errors
-      return;
+      // //has errors
+      // return;
     }
     selectedPic.name = popupName.value;
     selectedPic.credit = popupCredit.value;
