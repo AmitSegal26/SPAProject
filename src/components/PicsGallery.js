@@ -29,9 +29,9 @@ const updatePicsGallery = (picsArrFromHomePage) => {
 
 const createGallery = () => {
   let innerStr = "";
-  //clear event galleryeners for delete btns
+  //clear event listeners for delete btns
   clearEventListeners("home-pic-gallery-delete-btn", handleDeleteBtnClick);
-  //clear event galleryeners for edit btns
+  //clear event listeners for edit btns
   clearEventListeners("home-pic-gallery-edit-btn", handleEditBtnClick);
   //create new elements and remove old ones
   for (let pic of picsArr) {
