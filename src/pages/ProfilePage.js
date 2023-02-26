@@ -114,7 +114,7 @@ profilePasswordBtn.addEventListener("click", () => {
     checkReEnterPasswordInput();
   });
   inputIsBusiness.addEventListener("change", () => {
-    isBusiness = !isBusiness;
+    isBusiness = inputIsBusiness.checked;
   });
   // ///////////////////////////////////////////////
 
@@ -408,6 +408,7 @@ profileBtn.addEventListener("click", () => {
       user.email = inputEmail.value;
       user.phone = inputPhone.value;
       user.password = inputPassword.value;
+      user.isBusiness = inputIsBusiness.checked;
       localStorage.setItem(
         "token",
         JSON.stringify({

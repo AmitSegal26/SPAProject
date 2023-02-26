@@ -87,7 +87,7 @@ window.addEventListener("load", () => {
     checkReEnterPasswordInput();
   });
   inputIsBusiness.addEventListener("change", () => {
-    isBusiness = !isBusiness;
+    isBusiness = inputIsBusiness.checked;
   });
   // ///////////////////////////////////////////////
 
@@ -422,7 +422,7 @@ registerBtn.addEventListener("click", () => {
           inputHouse.value,
           inputZip.value
         ),
-        isBusiness
+        inputIsBusiness.checked
       ),
     ];
   } else {
@@ -452,7 +452,7 @@ registerBtn.addEventListener("click", () => {
           inputHouse.value,
           inputZip.value
         ),
-        isBusiness
+        inputIsBusiness.checked
       ) /* makes a new array of users - then below update the item of the database */,
     ];
   }
