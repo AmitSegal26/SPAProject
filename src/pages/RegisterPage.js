@@ -100,12 +100,18 @@ window.addEventListener("load", () => {
       document
         .getElementById("register-first-name-error")
         .classList.add("d-none");
+      document
+        .getElementById("register-first-name-rules")
+        .classList.add("d-none");
       firstNameOk = true;
     } else {
       //the text is not ok
       inputFirstName.classList.add("is-invalid");
       document
         .getElementById("register-first-name-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-first-name-rules")
         .classList.remove("d-none");
       document.getElementById("register-first-name-error").innerHTML =
         errorArr.join("<br>");
@@ -123,12 +129,18 @@ window.addEventListener("load", () => {
       document
         .getElementById("register-last-name-error")
         .classList.add("d-none");
+      document
+        .getElementById("register-last-name-rules")
+        .classList.add("d-none");
       lastNameOk = true;
     } else {
       //the text is not ok
       inputLastName.classList.add("is-invalid");
       document
         .getElementById("register-last-name-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-last-name-rules")
         .classList.remove("d-none");
       document.getElementById("register-last-name-error").innerHTML =
         errorArr.join("<br>");
@@ -143,12 +155,16 @@ window.addEventListener("load", () => {
       //the text is ok
       inputEmail.classList.remove("is-invalid");
       document.getElementById("register-email-error").classList.add("d-none");
+      document.getElementById("register-email-rules").classList.add("d-none");
       emailOk = true;
     } else {
       //the text is not ok
       inputEmail.classList.add("is-invalid");
       document
         .getElementById("register-email-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-email-rules")
         .classList.remove("d-none");
       document.getElementById("register-email-error").innerHTML =
         errorArr.join("<br>");
@@ -166,12 +182,18 @@ window.addEventListener("load", () => {
       document
         .getElementById("register-password-error")
         .classList.add("d-none");
+      document
+        .getElementById("register-password-rules")
+        .classList.add("d-none");
       passwordOk = true;
     } else {
       //the text is not ok
       inputPassword.classList.add("is-invalid");
       document
         .getElementById("register-password-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-password-rules")
         .classList.remove("d-none");
       document.getElementById("register-password-error").innerHTML =
         errorArr.join("<br>");
@@ -230,12 +252,16 @@ window.addEventListener("load", () => {
       //the text is ok
       inputPhone.classList.remove("is-invalid");
       document.getElementById("register-phone-error").classList.add("d-none");
+      document.getElementById("register-phone-rules").classList.add("d-none");
       phoneOk = true;
     } else {
       //the text is not ok
       inputPhone.classList.add("is-invalid");
       document
         .getElementById("register-phone-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-phone-rules")
         .classList.remove("d-none");
       document.getElementById("register-phone-error").innerHTML =
         errorArr.join("<br>");
@@ -250,12 +276,16 @@ window.addEventListener("load", () => {
       //the text is ok
       inputState.classList.remove("is-invalid");
       document.getElementById("register-state-error").classList.add("d-none");
+      document.getElementById("register-state-rules").classList.add("d-none");
       stateOk = true;
     } else {
       //the text is not ok
       inputState.classList.add("is-invalid");
       document
         .getElementById("register-state-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-state-rules")
         .classList.remove("d-none");
       document.getElementById("register-state-error").innerHTML =
         errorArr.join("<br>");
@@ -270,12 +300,16 @@ window.addEventListener("load", () => {
       //the text is ok
       inputCountry.classList.remove("is-invalid");
       document.getElementById("register-country-error").classList.add("d-none");
+      document.getElementById("register-country-rules").classList.add("d-none");
       countryOk = true;
     } else {
       //the text is not ok
       inputCountry.classList.add("is-invalid");
       document
         .getElementById("register-country-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-country-rules")
         .classList.remove("d-none");
       document.getElementById("register-country-error").innerHTML =
         errorArr.join("<br>");
@@ -290,11 +324,13 @@ window.addEventListener("load", () => {
       //the text is ok
       inputCity.classList.remove("is-invalid");
       document.getElementById("register-city-error").classList.add("d-none");
+      document.getElementById("register-city-rules").classList.add("d-none");
       cityOk = true;
     } else {
       //the text is not ok
       inputCity.classList.add("is-invalid");
       document.getElementById("register-city-error").classList.remove("d-none");
+      document.getElementById("register-city-rules").classList.remove("d-none");
       document.getElementById("register-city-error").innerHTML =
         errorArr.join("<br>");
       cityOk = false;
@@ -308,12 +344,16 @@ window.addEventListener("load", () => {
       //the text is ok
       inputStreet.classList.remove("is-invalid");
       document.getElementById("register-street-error").classList.add("d-none");
+      document.getElementById("register-street-rules").classList.add("d-none");
       streetOk = true;
     } else {
       //the text is not ok
       inputStreet.classList.add("is-invalid");
       document
         .getElementById("register-street-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-street-rules")
         .classList.remove("d-none");
       document.getElementById("register-street-error").innerHTML =
         errorArr.join("<br>");
@@ -328,12 +368,16 @@ window.addEventListener("load", () => {
       //the text is ok
       inputHouse.classList.remove("is-invalid");
       document.getElementById("register-house-error").classList.add("d-none");
+      document.getElementById("register-house-rules").classList.add("d-none");
       houseOk = true;
     } else {
       //the text is not ok
       inputHouse.classList.add("is-invalid");
       document
         .getElementById("register-house-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("register-house-rules")
         .classList.remove("d-none");
       document.getElementById("register-house-error").innerHTML =
         errorArr.join("<br>");
@@ -348,11 +392,13 @@ window.addEventListener("load", () => {
       //the text is ok
       inputZip.classList.remove("is-invalid");
       document.getElementById("register-zip-error").classList.add("d-none");
+      document.getElementById("register-zip-rules").classList.add("d-none");
       zipOk = true;
     } else {
       //the text is not ok
       inputZip.classList.add("is-invalid");
       document.getElementById("register-zip-error").classList.remove("d-none");
+      document.getElementById("register-zip-rules").classList.remove("d-none");
       document.getElementById("register-zip-error").innerHTML =
         errorArr.join("<br>");
       zipOk = false;
@@ -396,8 +442,25 @@ const clearInputs = () => {
 };
 
 registerBtn.addEventListener("click", () => {
+  if (
+    !(
+      firstNameOk &&
+      lastNameOk &&
+      emailOk &&
+      passwordOk &&
+      stateOk &&
+      countryOk &&
+      cityOk &&
+      streetOk &&
+      zipOk &&
+      houseOk &&
+      phoneOk
+    )
+  ) {
+    return;
+  }
   let userId = JSON.parse(localStorage.getItem("nextuserid"));
-  /* in case someone deletes the data of users from local storage WHIILE registering, we should make sure
+  /* in case someone deletes the data of users from local storage WHIILE registering using devTools, we should make sure
      that the id starts from 1.
      if there is no value at the key "nextuserid", then it would put the value zero at the property user.id.
   */

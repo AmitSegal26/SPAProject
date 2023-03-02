@@ -11,7 +11,11 @@ const popupImageUrl = document.getElementById("popup-image-url");
 const popupCredit = document.getElementById("popup-credit");
 const PopupWrapper = document.getElementById("home-popup-wrapper");
 const saveBtn = document.getElementById("popup-save-btn");
-const initPopup = (selectedPicFromHomePage, editPicFunctionFromHomePage) => {
+const initPopup = (
+  selectedPicFromHomePage,
+  editPicFunctionFromHomePage,
+  isForEditOrAdding
+) => {
   /*
       set data from selectedPic to html
       */
@@ -25,9 +29,26 @@ const initPopup = (selectedPicFromHomePage, editPicFunctionFromHomePage) => {
   popupImage.style.width = "20vw";
   popupName.value = selectedPic.name;
   popupDescription.value = selectedPic.description;
+  popupDescription.style.height = "fit-content";
   popupCredit.value = selectedPic.credit;
   popupPrice.value = selectedPic.price;
   popupImageUrl.value = selectedPic.imgUrl;
+  if (!isForEditOrAdding) {
+    //if for showing information when clicking on the image
+    popupImage.disabled = true;
+    popupName.disabled = true;
+    popupDescription.disabled = true;
+    popupCredit.disabled = true;
+    popupPrice.disabled = true;
+    popupImageUrl.disabled = true;
+  } else {
+    popupImage.disabled = false;
+    popupName.disabled = false;
+    popupDescription.disabled = false;
+    popupCredit.disabled = false;
+    popupPrice.disabled = false;
+    popupImageUrl.disabled = false;
+  }
   showPopup();
 };
 
@@ -54,7 +75,7 @@ window.addEventListener("load", () => {
   saveBtn.addEventListener("click", () => {
     if (validateImage(popupImageUrl.value).length) {
       // //has errors
-      // return;
+      return;
     }
     selectedPic.name = popupName.value;
     selectedPic.credit = popupCredit.value;

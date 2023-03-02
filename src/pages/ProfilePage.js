@@ -1,5 +1,3 @@
-import PAGES from "../models/pageModel.js";
-import handlePageChange from "../routes/router.js";
 import validateEmail from "../validation/validateEmail.js";
 import validatePassword from "../validation/validatePassword.js";
 import validateName from "../validation/validateName.js";
@@ -10,8 +8,6 @@ import validateStreet from "../validation/validateStreet.js";
 import validateHouse from "../validation/validateHouse.js";
 import validateZip from "../validation/validateZip.js";
 import validatePhone from "../validation/validatePhone.js";
-import User from "../models/User.js";
-import Address from "../models/Address.js";
 
 const inputFirstName = document.getElementById("profile-first-name-input");
 const inputLastName = document.getElementById("profile-last-name-input");
@@ -43,7 +39,6 @@ let streetOk = true;
 let zipOk = true;
 let houseOk = true;
 let phoneOk = true;
-let isBusiness = false;
 
 let token = JSON.parse(localStorage.getItem("token"));
 let users = JSON.parse(localStorage.getItem("users"));
@@ -54,8 +49,12 @@ window.addEventListener("load", () => {
   if (!token) {
     return;
   }
-  let activeUser = users.find((user) => user.id === token.id);
   //resets all fields
+  makeInputsAsTokenConnected();
+});
+
+const makeInputsAsTokenConnected = () => {
+  let activeUser = users.find((user) => user.id === token.id);
   inputFirstName.value = activeUser.name.split(" ")[0];
   inputLastName.value = activeUser.name.split(" ")[1];
   inputState.value = activeUser.address.state;
@@ -69,7 +68,7 @@ window.addEventListener("load", () => {
   inputPassword.value = activeUser.password;
   inputReEnterPassword.value = activeUser.password;
   inputIsBusiness.checked = activeUser.isBusiness;
-});
+};
 
 profilePasswordBtn.addEventListener("click", () => {
   inputPassword.removeAttribute("disabled");
@@ -424,3 +423,5 @@ profileBtn.addEventListener("click", () => {
   localStorage.setItem("users", JSON.stringify(users));
   location.reload();
 });
+
+export default makeInputsAsTokenConnected;

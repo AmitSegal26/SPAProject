@@ -33,6 +33,8 @@ const createGallery = () => {
   clearEventListeners("home-pic-gallery-delete-btn", handleDeleteBtnClick);
   //clear event listeners for edit btns
   clearEventListeners("home-pic-gallery-edit-btn", handleEditBtnClick);
+  // clear event listeners for images
+  clearEventListeners("home-pic-gallery-picture", handleImageClick);
   //create new elements and remove old ones
   for (let pic of picsArr) {
     innerStr += createItem(
@@ -49,6 +51,8 @@ const createGallery = () => {
   createBtnEventListener("home-pic-gallery-delete-btn", handleDeleteBtnClick);
   // add event galleryeners for edit btns
   createBtnEventListener("home-pic-gallery-edit-btn", handleEditBtnClick);
+  // add event listeners for images
+  createBtnEventListener("home-pic-gallery-picture", handleImageClick);
 };
 
 const createItem = (id, name, img, credit, description, price) => {
@@ -67,6 +71,7 @@ const createItem = (id, name, img, credit, description, price) => {
         src="${img}"
         class="card-img-top"
         alt="${name}"
+        id="home-pic-gallery-picture_${id}"
       />
       <div class="card-body">
         <h4 class="card-name">${name}</h4>
@@ -106,7 +111,11 @@ const handleDeleteBtnClick = (ev) => {
 };
 
 const handleEditBtnClick = (ev) => {
-  showPopup(getIdFromClick(ev));
+  showPopup(getIdFromClick(ev), true);
+};
+
+const handleImageClick = (ev) => {
+  showPopup(getIdFromClick(ev), false);
 };
 
 const clearEventListeners = (idKeyword, handleFunction) => {

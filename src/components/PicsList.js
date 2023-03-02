@@ -33,6 +33,8 @@ const createList = () => {
   clearEventListeners("home-pic-list-delete-btn", handleDeleteBtnClick);
   //clear event listeners for edit btns
   clearEventListeners("home-pic-list-edit-btn", handleEditBtnClick);
+  // clear event listeners for images
+  clearEventListeners("home-pic-gallery-picture", handleImageClick);
   //create new elements and remove old ones
   for (let pic of picsArr) {
     innerStr += createItem(
@@ -49,6 +51,8 @@ const createList = () => {
   createBtnEventListener("home-pic-list-delete-btn", handleDeleteBtnClick);
   // add event listeners for edit btns
   createBtnEventListener("home-pic-list-edit-btn", handleEditBtnClick);
+  // add event listeners for images
+  createBtnEventListener("home-pic-list-picture", handleImageClick);
 };
 
 const createItem = (id, name, img, credit, description, price) => {
@@ -64,7 +68,7 @@ const createItem = (id, name, img, credit, description, price) => {
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${img}" class="img-fluid rounded" alt="${name}" />
+        <img src="${img}" class="img-fluid rounded" alt="${name}" id="home-pic-list-picture_${id}" />
         </div>
         <div class="col-md-8">
         <div class="card-body">
@@ -107,7 +111,11 @@ const handleDeleteBtnClick = (ev) => {
 };
 
 const handleEditBtnClick = (ev) => {
-  showPopup(getIdFromClick(ev));
+  showPopup(getIdFromClick(ev), true);
+};
+
+const handleImageClick = (ev) => {
+  showPopup(getIdFromClick(ev), false);
 };
 
 const clearEventListeners = (idKeyword, handleFunction) => {

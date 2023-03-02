@@ -97,12 +97,12 @@ const sortPics = (up = true) => {
   updateDisplays();
 };
 
-const showPopup = (id) => {
+const showPopup = (id, isForEdit) => {
   let selectedPic = picsArr.find((item) => item.id === +id);
   if (!selectedPic) {
     return;
   }
-  initPopup(selectedPic, editPic);
+  initPopup(selectedPic, editPic, isForEdit);
 };
 
 const showNewPopup = () => {

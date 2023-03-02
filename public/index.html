@@ -78,6 +78,9 @@
             <!-- HOME PAGE -->
             <div id="home-page" class="d-block">
                 <h1>Home Page</h1>
+                <h4>Welcome to Amit's Gallery Shop! Here down below you can see our products:</h4>
+                <h6>Enter our 'About' page, so you can learn more about the website!</h6>
+                <hr>
                 <!-- Popup -->
                 <div class="popup-wrapper d-flex justify-content-center align-items-center d-none"
                     id="home-popup-wrapper">
@@ -198,6 +201,7 @@
                         Here you will find an explanation of how the app works
                     </h2>
                 </div>
+                <hr>
                 <div class="p-5 border rounded h-25 bg-light center">
                     <div>
                         <h2 class="text-center">Slider (Carousel) Display</h2>
@@ -210,6 +214,7 @@
                         Our
                         Products!</button>
                 </div>
+                <hr>
                 <div class="p-5 m-2 border rounded h-25 center bg-dark text-light">
                     <div class="px-4">
                         <h2 class="text-center">Gallery Display</h2>
@@ -222,6 +227,7 @@
                         Our
                         Products!</button>
                 </div>
+                <hr>
                 <div class="p-5 m-2 border rounded h-25 bg-light center">
                     <div class="px-4">
                         <h2 class="text-center">List Display</h2>
@@ -280,12 +286,24 @@
                         <input class="form-control mb-2" type="text" name="first" id="register-first-name-input"
                             minlength="2" autocomplete="off">
                         <span id="register-first-name-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-first-name-rules">
+                            <ul>Rules:
+                                <li>Name must Start with a capital case (ABCDE...)</li>
+                                <li>Name can containt only one capital case</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <label for="last-name-register-input">Last Name<span class="text-danger">*</span></label>
                         <input class="form-control mb-2" type="text" name="last" id="register-last-name-input"
                             autocomplete="off">
                         <span id="register-last-name-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-last-name-rules">
+                            <ul>Rules:
+                                <li>Name must Start with a capital case (ABCDE...)</li>
+                                <li>Name can containt only one capital case</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <h6>Address (Optional)</h6>
@@ -295,36 +313,72 @@
                         <input autocomplete="off" class="form-control mb-2" type="text" name="state"
                             id="register-state-input">
                         <span id="register-state-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-state-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-4">
                         <label for="country-register-input">Country</label>
                         <input autocomplete="off" class="form-control mb-2" type="text" name="country"
                             id="register-country-input">
                         <span id="register-country-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-country-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-4">
                         <label for="city-register-input">City</label>
                         <input autocomplete="off" class="form-control mb-2" type="text" name="city"
                             id="register-city-input">
                         <span id="register-city-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-city-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-4">
                         <label for="street-register-input">Street</label>
                         <input autocomplete="off" class="form-control mb-2" type="text" name="street"
                             id="register-street-input">
                         <span id="register-street-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-street-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-4">
                         <label for="house-register-input">House Number</label>
                         <input autocomplete="off" class="form-control mb-2" type="text" name="house"
                             id="register-house-input">
                         <span id="register-house-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-house-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-4">
                         <label for="zip-register-input">Zip Code (works only for Israel)</label>
                         <input autocomplete="off" class="form-control mb-2" type="text" name="zip"
                             id="register-zip-input">
                         <span id="register-zip-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-zip-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <h6>Means of contact</h6>
@@ -334,12 +388,24 @@
                         <input autocomplete="off" class="form-control mb-2" type="text" name="email"
                             id="register-email-input" minlength="2">
                         <span id="register-email-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-email-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <label for="phone-register-input">Phone</label>
                         <input autocomplete="off" class="form-control mb-2" type="text" name="phone"
                             id="register-phone-input">
                         <span id="register-phone-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-phone-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <h6>Security</h6>
@@ -349,6 +415,12 @@
                         <input autocomplete="off" class="form-control mb-2" type="password" name="password"
                             id="register-password-input" minlength="2">
                         <span id="register-password-error" class="text-danger"></span>
+                        <div class="d-none text-secondary alert alert-danger" id="register-password-rules">
+                            <ul>Rules:
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <label for="password-reenter-register-input">Re-enter Password<span
