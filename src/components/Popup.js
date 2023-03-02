@@ -9,7 +9,8 @@ const popupDescription = document.getElementById("popup-description");
 const popupPrice = document.getElementById("popup-price");
 const popupImageUrl = document.getElementById("popup-image-url");
 const popupCredit = document.getElementById("popup-credit");
-const PopupWrapper = document.getElementById("home-popup-wrapper");
+const popupWrapper = document.getElementById("home-popup-wrapper");
+const popupDate = document.getElementById("home-popup-date");
 const saveBtn = document.getElementById("popup-save-btn");
 const initPopup = (
   selectedPicFromHomePage,
@@ -26,42 +27,51 @@ const initPopup = (
   }
   editOrAddPicFunction = editPicFunctionFromHomePage;
   popupImage.src = selectedPic.imgUrl;
-  popupImage.style.width = "20vw";
+  popupImage.style.width = "100%";
   popupName.value = selectedPic.name;
   popupDescription.value = selectedPic.description;
   popupDescription.style.height = "fit-content";
   popupCredit.value = selectedPic.credit;
   popupPrice.value = selectedPic.price;
   popupImageUrl.value = selectedPic.imgUrl;
+  popupDate.innerText = `Created At: ${selectedPic.dateCreated}`;
   if (!isForEditOrAdding) {
     //if for showing information when clicking on the image
-    popupImage.disabled = true;
-    popupName.disabled = true;
-    popupDescription.disabled = true;
-    popupCredit.disabled = true;
-    popupPrice.disabled = true;
-    popupImageUrl.disabled = true;
+    enableDisableInputs(true);
+    saveBtn.classList.add("d-none");
+    document.getElementById("popup-cancel-btn").classList.add("d-none");
   } else {
-    popupImage.disabled = false;
-    popupName.disabled = false;
-    popupDescription.disabled = false;
-    popupCredit.disabled = false;
-    popupPrice.disabled = false;
-    popupImageUrl.disabled = false;
+    //is for editing or adding the inputs
+    enableDisableInputs(false);
+    saveBtn.classList.remove("d-none");
+    document.getElementById("popup-cancel-btn").classList.remove("d-none");
   }
   showPopup();
+  //scrolls the popup to the top each time you open it
+  document.getElementById("home-actual-popup").scrollTop = 0;
+  //disabling the scrolling on the body
+  document.body.style.overflow = "hidden";
+};
+
+const enableDisableInputs = (ability) => {
+  popupImage.disabled = ability;
+  popupName.disabled = ability;
+  popupDescription.disabled = ability;
+  popupCredit.disabled = ability;
+  popupPrice.disabled = ability;
+  popupImageUrl.disabled = ability;
 };
 
 const showPopup = () => {
-  PopupWrapper.classList.remove("d-none");
+  popupWrapper.classList.remove("d-none");
 };
 
 const hidePopup = () => {
-  PopupWrapper.classList.add("d-none");
+  popupWrapper.classList.add("d-none");
 };
 
 window.addEventListener("load", () => {
-  PopupWrapper.addEventListener("click", (ev) => {
+  popupWrapper.addEventListener("click", (ev) => {
     if (
       ev.target.id !== "home-popup-wrapper" &&
       ev.target.id !== "popup-cancel-btn" &&
@@ -70,6 +80,8 @@ window.addEventListener("load", () => {
       return;
     }
     hidePopup();
+    //enabling the scrolling on the body
+    document.body.style.overflowY = "scroll";
   });
   //save changes
   saveBtn.addEventListener("click", () => {
@@ -77,11 +89,17 @@ window.addEventListener("load", () => {
       // //has errors
       return;
     }
+    const date = new Date();
     selectedPic.name = popupName.value;
     selectedPic.credit = popupCredit.value;
     selectedPic.description = popupDescription.value;
     selectedPic.price = popupPrice.value;
     selectedPic.imgUrl = popupImageUrl.value;
+    selectedPic.dateCreated = `${
+      date.getDay() < 10 ? "0" + date.getDay() : date.getDay()
+    }/${
+      date.getMonth() < 10 ? "0" + date.getMonth() : date.getMonth()
+    }/${date.getFullYear()}`;
     editOrAddPicFunction(selectedPic);
     hidePopup();
   });

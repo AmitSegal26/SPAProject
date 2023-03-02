@@ -31,7 +31,7 @@ window.addEventListener("load", () => {
 
   initialPicsList(picsArr, isBusiness, deletePic, showPopup);
   initialPicsGallery(picsArr, isBusiness, deletePic, showPopup);
-  initialPicsCarousel(picsArr, isBusiness, deletePic);
+  initialPicsCarousel(picsArr, showPopup);
   document.getElementById("home-search").classList.add("d-none");
 });
 
@@ -106,7 +106,7 @@ const showPopup = (id, isForEdit) => {
 };
 
 const showNewPopup = () => {
-  initPopup(undefined, addNewPic);
+  initPopup(undefined, addNewPic, true);
 };
 
 const editPic = () => {

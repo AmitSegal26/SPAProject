@@ -46,6 +46,7 @@ nav {
 
 #home-actual-popup {
     height: 90vh;
+    width: 50vw;
     overflow-y: scroll;
 }
 
