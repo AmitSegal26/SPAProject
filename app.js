@@ -6,6 +6,7 @@ import "./src/pages/LoginPage.js";
 import "./src/pages/ProfilePage.js";
 import "./src/pages/HomePage.js";
 import showNewPopup from "./src/pages/HomePage.js";
+import makeInputsAsTokenConnected from "./src/pages/ProfilePage.js";
 
 const navHomeLink = document.getElementById("nav-home-link");
 const navIconLink = document.getElementById("nav-icon-link");
@@ -95,6 +96,7 @@ navRegisterLink.addEventListener("click", () => {
 });
 navProfileLink.addEventListener("click", () => {
   handlePageChange(PAGES.PROFILE);
+  makeInputsAsTokenConnected();
 });
 navCartLink.addEventListener("click", () => {
   handlePageChange(PAGES.CART);
