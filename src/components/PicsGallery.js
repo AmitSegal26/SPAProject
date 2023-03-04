@@ -69,7 +69,7 @@ const createItem = (id, name, img, credit, description, price) => {
     <div class="card h-100">
       <img
         src="${img}"
-        class="card-img-top"
+        class="card-img-top piclistGalleryCarousel"
         alt="${name}"
         id="home-pic-gallery-picture_${id}"
       />

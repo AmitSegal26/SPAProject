@@ -53,3 +53,11 @@ nav {
 img[for*="carousel"] {
     width: 100%;
 }
+
+.piclistGalleryCarousel {
+    border: 3px solid #000;
+}
+
+.piclistGalleryCarousel:hover {
+    cursor: pointer;
+}

@@ -53,6 +53,7 @@ window.addEventListener("load", () => {
   makeInputsAsTokenConnected();
 });
 
+//resetting the inputs to original of the user
 const makeInputsAsTokenConnected = () => {
   let activeUser = users.find((user) => user.id === token.id);
   inputFirstName.value = activeUser.name.split(" ")[0];
@@ -395,6 +396,11 @@ profilePasswordBtn.addEventListener("click", () => {
 }
 
 profileBtn.addEventListener("click", () => {
+  const response = confirm("Are you sure you want to change details?");
+  if (!response) {
+    makeInputsAsTokenConnected();
+    return;
+  }
   for (let user of users) {
     if (user.id === token.id) {
       user.name = inputFirstName.value + " " + inputLastName.value;

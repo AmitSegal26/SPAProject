@@ -70,6 +70,10 @@ const hidePopup = () => {
   popupWrapper.classList.add("d-none");
 };
 
+const enableScrollingOfBody = () => {
+  document.body.style.overflowY = "scroll";
+};
+
 window.addEventListener("load", () => {
   popupWrapper.addEventListener("click", (ev) => {
     if (
@@ -81,7 +85,7 @@ window.addEventListener("load", () => {
     }
     hidePopup();
     //enabling the scrolling on the body
-    document.body.style.overflowY = "scroll";
+    enableScrollingOfBody();
   });
   //save changes
   saveBtn.addEventListener("click", () => {
@@ -96,11 +100,14 @@ window.addEventListener("load", () => {
     selectedPic.price = popupPrice.value;
     selectedPic.imgUrl = popupImageUrl.value;
     selectedPic.dateCreated = `${
-      date.getDay() < 10 ? "0" + date.getDay() : date.getDay()
+      date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
     }/${
-      date.getMonth() < 10 ? "0" + date.getMonth() : date.getMonth()
+      date.getMonth() + 1 < 10
+        ? "0" + (date.getMonth() + 1)
+        : date.getMonth() + 1
     }/${date.getFullYear()}`;
     editOrAddPicFunction(selectedPic);
+    enableScrollingOfBody();
     hidePopup();
   });
   //reggex for image link

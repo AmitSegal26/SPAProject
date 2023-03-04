@@ -67,8 +67,8 @@ const createItem = (id, name, img, credit, description, price) => {
   return `
   <li class="list-group-item">
     <div class="row">
-        <div class="col-md-2">
-        <img src="${img}" class="img-fluid rounded" alt="${name}" id="home-pic-list-picture_${id}" />
+        <div class="col-md-2 ">
+        <img src="${img}" class="img-fluid rounded piclistGalleryCarousel" alt="${name}" id="home-pic-list-picture_${id}" />
         </div>
         <div class="col-md-8">
         <div class="card-body">
