@@ -59,8 +59,9 @@ window.addEventListener("load", () => {
         .getElementById("cart-link-icon")
         .classList.remove("bi-cart-fill");
     }
-    if (token.isBusiness) navNewPicLink.classList.remove("d-none");
-    else {
+    if (token.isBusiness) {
+      navNewPicLink.classList.remove("d-none");
+    } else {
       navNewPicLink.classList.add("d-none");
     }
   }
