@@ -290,6 +290,10 @@
                             <ul>Rules:
                                 <li>Name must Start with a capital case (ABCDE...)</li>
                                 <li>Name can containt only one capital case</li>
+                                <li>Field can contain lowercase letters (a-z)</li>
+                                <li>Field can contain digits (0-9)</li>
+                                <li>Field can contain hyphens (-) or whitespace</li>
+                                <li>Field must be between 2-256 charachters!</li>
                             </ul>
                         </div>
                     </div>
@@ -302,6 +306,10 @@
                             <ul>Rules:
                                 <li>Name must Start with a capital case (ABCDE...)</li>
                                 <li>Name can containt only one capital case</li>
+                                <li>Field can contain lowercase letters (a-z)</li>
+                                <li>Field can contain digits (0-9)</li>
+                                <li>Field can contain hyphens (-) or whitespace</li>
+                                <li>Field must be between 2-256 charachters!</li>
                             </ul>
                         </div>
                     </div>
@@ -315,8 +323,9 @@
                         <span id="register-state-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-state-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li>Field must Start with a capital case (ABCDE...)</li>
+                                <li>Field must contain letters only</li>
+                                <li>Field can contain more than one word (each word starts with a capital case)</li>
                             </ul>
                         </div>
                     </div>
@@ -327,8 +336,9 @@
                         <span id="register-country-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-country-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li>Field must Start with a capital case (ABCDE...)</li>
+                                <li>Field must contain letters only</li>
+                                <li>Field can contain more than one word (each word starts with a capital case)</li>
                             </ul>
                         </div>
                     </div>
@@ -339,8 +349,9 @@
                         <span id="register-city-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-city-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li>Field must Start with a capital case (ABCDE...)</li>
+                                <li>Field must contain letters only</li>
+                                <li>Field can contain more than one word (each word starts with a capital case)</li>
                             </ul>
                         </div>
                     </div>
@@ -351,8 +362,9 @@
                         <span id="register-street-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-street-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li>Field must Start with a capital case (ABCDE...)</li>
+                                <li>Field must contain letters only</li>
+                                <li>Field can contain more than one word (each word starts with a capital case)</li>
                             </ul>
                         </div>
                     </div>
@@ -363,20 +375,25 @@
                         <span id="register-house-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-house-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li>Field can digits (0-9)</li>
+                                <li>Field can contain lowercase letters
+                                    (a-z)</li>
+                                <li>Field can contain uppercase letters (A-Z)</li>
+                                <li>Field can contain forward slashes (/).</li>
+                                <li>Field must contain only the allowed charachters</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-4">
-                        <label for="zip-register-input">Zip Code (works only for Israel)</label>
+                        <label for="zip-register-input">Zip Code (valid only for Israel)</label>
                         <input autocomplete="off" class="form-control mb-2" type="text" name="zip"
                             id="register-zip-input">
                         <span id="register-zip-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-zip-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li> Field can only contain digits (0-9)</li>
+                                <li>Field must contain at least 5 digits</li>
+                                <li>Field can contain up to 9 digits</li>
                             </ul>
                         </div>
                     </div>
@@ -390,8 +407,15 @@
                         <span id="register-email-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-email-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li>Field must start with one or more characters that can be any of the following:
+                                    lowercase letters (a-z), uppercase letters (A-Z), digits (0-9), underscores (_),
+                                    periods (.), plus signs (+), or hyphens (-)</li>
+                                <li>Field must contain an at sign (@) after the first set of allowed characters</li>
+                                <li>After the at(@) sign, there must be one or more characters that can be any of the
+                                    following: lowercase letters (a-z), uppercase letters (A-Z), digits (0-9), or
+                                    hyphens (-)</li>
+                                <li>There must be a period (.) after the second set of allowed characters</li>
+                                <li><span style="font-weight:bold">examples: email@gmail.com, ema@gma.il</span></li>
                             </ul>
                         </div>
                     </div>
@@ -402,8 +426,8 @@
                         <span id="register-phone-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-phone-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li>Field can contain between 9-20 charachters</li>
+                                <li>Field must only contain digits (0-9)</li>
                             </ul>
                         </div>
                     </div>
@@ -417,8 +441,14 @@
                         <span id="register-password-error" class="text-danger"></span>
                         <div class="d-none text-secondary alert alert-danger" id="register-password-rules">
                             <ul>Rules:
-                                <li></li>
-                                <li></li>
+                                <li>Field must contain at least one lowercase letter (a-z)</li>
+                                <li>Field must contain at least one uppercase letter (A-Z)</li>
+                                <li>Field must contain at least one digit (0-9)</li>
+                                <li>Field must contain at least one special character, which can be any of the
+                                    following: @, $, !, %, *, ?, or &</li>
+                                <li>Field can then contain any combination of uppercase letters, lowercase letters,
+                                    digits, and special characters</li>
+                                <li>Field must be at least 8 characters long, and no longer than 255 characters</li>
                             </ul>
                         </div>
                     </div>
