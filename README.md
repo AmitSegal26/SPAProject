@@ -2,6 +2,9 @@
 
 ## Welcome to my website - Amit's Gallery Shop
 
+Inline-style:
+![alt text](./public/assets/imgs/favicon.png "Logo Title")
+
 # very important to clean the local storage memory, thats because some of the local storage key names might be identical amongst the other students. ENJOY THE WEBSITE!
 
 ### For the tester convinience - there are 2 users ready for testing the website.
@@ -33,9 +36,10 @@ At the profile page you can edit your information! name, email, phone number, ad
 
 ## Cart Page (BONUS)
 
-_notice_ that the icon of the link changes as you add or remove items from the cart.
 As you will see, at the navbar you have a link to the cart page, there you can see the pictures you have added to your cart. Unfortunately, due to technical problems (no server found) you cannot yet purchase them completely. But don't you worry, once we finish establishing the web site you will be able to purchase the pictures and get your own GalleryPic!
 You can add the pictures to your cart at the home page using the 'gallery' and the 'list' displays. If you wish to remove some of the items out of the cart, press the 'remove' button.
+
+_notice_ that the icon of the link changes as you add or remove items from the cart.
 
 ## About Page
 
