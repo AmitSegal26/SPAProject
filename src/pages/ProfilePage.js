@@ -49,6 +49,7 @@ window.addEventListener("load", () => {
   if (!token) {
     return;
   }
+
   //resets all fields
   makeInputsAsTokenConnected();
 });
@@ -131,12 +132,18 @@ profilePasswordBtn.addEventListener("click", () => {
       document
         .getElementById("profile-first-name-error")
         .classList.add("d-none");
+      document
+        .getElementById("profile-first-name-rules")
+        .classList.add("d-none");
       firstNameOk = true;
     } else {
       //the text is not ok
       inputFirstName.classList.add("is-invalid");
       document
         .getElementById("profile-first-name-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("profile-first-name-rules")
         .classList.remove("d-none");
       document.getElementById("profile-first-name-error").innerHTML =
         errorArr.join("<br>");
@@ -154,12 +161,18 @@ profilePasswordBtn.addEventListener("click", () => {
       document
         .getElementById("profile-last-name-error")
         .classList.add("d-none");
+      document
+        .getElementById("profile-last-name-rules")
+        .classList.add("d-none");
       lastNameOk = true;
     } else {
       //the text is not ok
       inputLastName.classList.add("is-invalid");
       document
         .getElementById("profile-last-name-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("profile-last-name-rules")
         .classList.remove("d-none");
       document.getElementById("profile-last-name-error").innerHTML =
         errorArr.join("<br>");
@@ -174,11 +187,13 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputEmail.classList.remove("is-invalid");
       document.getElementById("profile-email-error").classList.add("d-none");
+      document.getElementById("profile-email-rules").classList.add("d-none");
       emailOk = true;
     } else {
       //the text is not ok
       inputEmail.classList.add("is-invalid");
       document.getElementById("profile-email-error").classList.remove("d-none");
+      document.getElementById("profile-email-rules").classList.remove("d-none");
       document.getElementById("profile-email-error").innerHTML =
         errorArr.join("<br>");
       emailOk = false;
@@ -193,12 +208,16 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputPassword.classList.remove("is-invalid");
       document.getElementById("profile-password-error").classList.add("d-none");
+      document.getElementById("profile-password-rules").classList.add("d-none");
       passwordOk = true;
     } else {
       //the text is not ok
       inputPassword.classList.add("is-invalid");
       document
         .getElementById("profile-password-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("profile-password-rules")
         .classList.remove("d-none");
       document.getElementById("profile-password-error").innerHTML =
         errorArr.join("<br>");
@@ -257,11 +276,13 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputPhone.classList.remove("is-invalid");
       document.getElementById("profile-phone-error").classList.add("d-none");
+      document.getElementById("profile-phone-rules").classList.add("d-none");
       phoneOk = true;
     } else {
       //the text is not ok
       inputPhone.classList.add("is-invalid");
       document.getElementById("profile-phone-error").classList.remove("d-none");
+      document.getElementById("profile-phone-rules").classList.remove("d-none");
       document.getElementById("profile-phone-error").innerHTML =
         errorArr.join("<br>");
       phoneOk = false;
@@ -275,11 +296,13 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputState.classList.remove("is-invalid");
       document.getElementById("profile-state-error").classList.add("d-none");
+      document.getElementById("profile-state-rules").classList.add("d-none");
       stateOk = true;
     } else {
       //the text is not ok
       inputState.classList.add("is-invalid");
       document.getElementById("profile-state-error").classList.remove("d-none");
+      document.getElementById("profile-state-rules").classList.remove("d-none");
       document.getElementById("profile-state-error").innerHTML =
         errorArr.join("<br>");
       stateOk = false;
@@ -293,12 +316,16 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputCountry.classList.remove("is-invalid");
       document.getElementById("profile-country-error").classList.add("d-none");
+      document.getElementById("profile-country-rules").classList.add("d-none");
       countryOk = true;
     } else {
       //the text is not ok
       inputCountry.classList.add("is-invalid");
       document
         .getElementById("profile-country-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("profile-country-rules")
         .classList.remove("d-none");
       document.getElementById("profile-country-error").innerHTML =
         errorArr.join("<br>");
@@ -313,11 +340,13 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputCity.classList.remove("is-invalid");
       document.getElementById("profile-city-error").classList.add("d-none");
+      document.getElementById("profile-city-rules").classList.add("d-none");
       cityOk = true;
     } else {
       //the text is not ok
       inputCity.classList.add("is-invalid");
       document.getElementById("profile-city-error").classList.remove("d-none");
+      document.getElementById("profile-city-rules").classList.remove("d-none");
       document.getElementById("profile-city-error").innerHTML =
         errorArr.join("<br>");
       cityOk = false;
@@ -331,12 +360,16 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputStreet.classList.remove("is-invalid");
       document.getElementById("profile-street-error").classList.add("d-none");
+      document.getElementById("profile-street-rules").classList.add("d-none");
       streetOk = true;
     } else {
       //the text is not ok
       inputStreet.classList.add("is-invalid");
       document
         .getElementById("profile-street-error")
+        .classList.remove("d-none");
+      document
+        .getElementById("profile-street-rules")
         .classList.remove("d-none");
       document.getElementById("profile-street-error").innerHTML =
         errorArr.join("<br>");
@@ -351,11 +384,13 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputHouse.classList.remove("is-invalid");
       document.getElementById("profile-house-error").classList.add("d-none");
+      document.getElementById("profile-house-rules").classList.add("d-none");
       houseOk = true;
     } else {
       //the text is not ok
       inputHouse.classList.add("is-invalid");
       document.getElementById("profile-house-error").classList.remove("d-none");
+      document.getElementById("profile-house-rules").classList.remove("d-none");
       document.getElementById("profile-house-error").innerHTML =
         errorArr.join("<br>");
       houseOk = false;
@@ -369,11 +404,13 @@ profilePasswordBtn.addEventListener("click", () => {
       //the text is ok
       inputZip.classList.remove("is-invalid");
       document.getElementById("profile-zip-error").classList.add("d-none");
+      document.getElementById("profile-zip-rules").classList.add("d-none");
       zipOk = true;
     } else {
       //the text is not ok
       inputZip.classList.add("is-invalid");
       document.getElementById("profile-zip-error").classList.remove("d-none");
+      document.getElementById("profile-zip-rules").classList.remove("d-none");
       document.getElementById("profile-zip-error").innerHTML =
         errorArr.join("<br>");
       zipOk = false;
@@ -409,6 +446,7 @@ profileBtn.addEventListener("click", () => {
   let user = users.find((item) => item.id === token.id);
   if (userOfEmail && user.id !== userOfEmail.id) {
     alert("Email already exists!");
+    inputEmail.value = token.email;
     return;
   }
   for (let user of users) {

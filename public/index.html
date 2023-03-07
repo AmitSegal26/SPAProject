@@ -497,9 +497,20 @@
                                 <div class="col-12 col-md-6">
                                     <label for="first-name-user-field">First Name<span
                                             class="text-danger">*</span></label>
+
                                     <input class="form-control mb-2" type="text" name="first"
                                         id="profile-first-name-input" minlength="2" autocomplete="off">
                                     <span id="profile-first-name-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-first-name-rules">
+                                        <ul>Rules:
+                                            <li>Name must Start with a capital case (ABCDE...)</li>
+                                            <li>Name can containt only one capital case</li>
+                                            <li>Field can contain lowercase letters (a-z)</li>
+                                            <li>Field can contain digits (0-9)</li>
+                                            <li>Field can contain hyphens (-) or whitespace</li>
+                                            <li>Field must be between 2-256 charachters!</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="last-name-user-field">Last Name<span
@@ -507,6 +518,16 @@
                                     <input class="form-control mb-2" type="text" name="last"
                                         id="profile-last-name-input" autocomplete="off">
                                     <span id="profile-last-name-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-last-name-rules">
+                                        <ul>Rules:
+                                            <li>Name must Start with a capital case (ABCDE...)</li>
+                                            <li>Name can containt only one capital case</li>
+                                            <li>Field can contain lowercase letters (a-z)</li>
+                                            <li>Field can contain digits (0-9)</li>
+                                            <li>Field can contain hyphens (-) or whitespace</li>
+                                            <li>Field must be between 2-256 charachters!</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <h6>Address</h6>
@@ -516,36 +537,85 @@
                                     <input autocomplete="off" class="form-control mb-2" type="text" name="state"
                                         id="profile-state-input">
                                     <span id="profile-state-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-state-rules">
+                                        <ul>Rules:
+                                            <li>Field must Start with a capital case (ABCDE...)</li>
+                                            <li>Field must contain letters only</li>
+                                            <li>Field can contain more than one word (each word starts with a capital
+                                                case)</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-xl-4">
                                     <label for="country-user-field">Country</label>
                                     <input autocomplete="off" class="form-control mb-2" type="text" name="country"
                                         id="profile-country-input">
                                     <span id="profile-country-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-country-rules">
+                                        <ul>Rules:
+                                            <li>Field must Start with a capital case (ABCDE...)</li>
+                                            <li>Field must contain letters only</li>
+                                            <li>Field can contain more than one word (each word starts with a capital
+                                                case)</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-xl-4">
                                     <label for="city-user-field">City</label>
                                     <input autocomplete="off" class="form-control mb-2" type="text" name="city"
                                         id="profile-city-input">
                                     <span id="profile-city-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-city-rules">
+                                        <ul>Rules:
+                                            <li>Field must Start with a capital case (ABCDE...)</li>
+                                            <li>Field must contain letters only</li>
+                                            <li>Field can contain more than one word (each word starts with a capital
+                                                case)</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-xl-4">
                                     <label for="street-user-field">Street</label>
                                     <input autocomplete="off" class="form-control mb-2" type="text" name="street"
                                         id="profile-street-input">
                                     <span id="profile-street-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-street-rules">
+                                        <ul>Rules:
+                                            <li>Field must Start with a capital case (ABCDE...)</li>
+                                            <li>Field must contain letters only</li>
+                                            <li>Field can contain more than one word (each word starts with a capital
+                                                case)</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-xl-4">
                                     <label for="house-user-field">House Number</label>
                                     <input autocomplete="off" class="form-control mb-2" type="text" name="house"
                                         id="profile-house-input">
                                     <span id="profile-house-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-house-rules">
+                                        <ul>Rules:
+                                            <li>Field can digits (0-9)</li>
+                                            <li>Field can contain lowercase letters
+                                                (a-z)</li>
+                                            <li>Field can contain uppercase letters (A-Z)</li>
+                                            <li>Field can contain forward slashes (/).</li>
+                                            <li>Field must contain only the allowed charachters</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-xl-4">
                                     <label for="zip-user-field">Zip Code</label>
                                     <input autocomplete="off" class="form-control mb-2" type="text" name="zip"
                                         id="profile-zip-input">
                                     <span id="profile-zip-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-zip-rules">
+                                        <ul>Rules:
+                                            <li> Field can only contain digits (0-9)</li>
+                                            <li>Field must contain at least 5 digits</li>
+                                            <li>Field can contain up to 9 digits</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <h6>Means of contact</h6>
@@ -555,12 +625,38 @@
                                     <input autocomplete="off" class="form-control mb-2" type="text" name="email"
                                         id="profile-email-input" minlength="2" disabled="">
                                     <span id="profile-email-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-email-rules">
+                                        <ul>Rules:
+                                            <li>Field must start with one or more characters that can be any of the
+                                                following:
+                                                lowercase letters (a-z), uppercase letters (A-Z), digits (0-9),
+                                                underscores (_),
+                                                periods (.), plus signs (+), or hyphens (-)</li>
+                                            <li>Field must contain an at sign (@) after the first set of allowed
+                                                characters</li>
+                                            <li>After the at(@) sign, there must be one or more characters that can be
+                                                any of the
+                                                following: lowercase letters (a-z), uppercase letters (A-Z), digits
+                                                (0-9), or
+                                                hyphens (-)</li>
+                                            <li>There must be a period (.) after the second set of allowed characters
+                                            </li>
+                                            <li><span style="font-weight:bold">examples: email@gmail.com,
+                                                    ema@gma.il</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="phone-user-field">Phone</label>
                                     <input autocomplete="off" class="form-control mb-2" type="text" name="phone"
                                         id="profile-phone-input">
                                     <span id="profile-phone-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-phone-rules">
+                                        <ul>Rules:
+                                            <li>Field can contain between 9-20 charachters</li>
+                                            <li>Field must only contain digits (0-9)</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="center my-2">
@@ -576,6 +672,21 @@
                                     <input autocomplete="off" class="form-control mb-2" type="password" name="password"
                                         id="profile-password-input" minlength="2" disabled="true">
                                     <span id="profile-password-error" class="text-danger"></span>
+                                    <div class="d-none text-secondary alert alert-danger" id="profile-password-rules">
+                                        <ul>Rules:
+                                            <li>Field must contain at least one lowercase letter (a-z)</li>
+                                            <li>Field must contain at least one uppercase letter (A-Z)</li>
+                                            <li>Field must contain at least one digit (0-9)</li>
+                                            <li>Field must contain at least one special character, which can be any of
+                                                the
+                                                following: @, $, !, %, *, ?, or &</li>
+                                            <li>Field can then contain any combination of uppercase letters, lowercase
+                                                letters,
+                                                digits, and special characters</li>
+                                            <li>Field must be at least 8 characters long, and no longer than 255
+                                                characters</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="text-warning" for="password-reenter-profile-input">Re-enter
