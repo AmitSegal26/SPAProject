@@ -44,6 +44,21 @@ window.addEventListener("load", () => {
     document.getElementById("nav-profile-name").innerText = token.name;
     document.getElementById("navBeforeLogin").classList.add("d-none");
     document.getElementById("navAfterLogin").classList.remove("d-none");
+    if (
+      JSON.parse(localStorage.getItem("users")).find(
+        (user) => token.id === user.id
+      ).cart.length !== 0
+    ) {
+      //if user has items in cart
+      //! just asthetics of the website, nothing neccessary
+      document.getElementById("cart-link-icon").classList.remove("bi-cart");
+      document.getElementById("cart-link-icon").classList.add("bi-cart-fill");
+    } else {
+      document.getElementById("cart-link-icon").classList.add("bi-cart");
+      document
+        .getElementById("cart-link-icon")
+        .classList.remove("bi-cart-fill");
+    }
     if (token.isBusiness) navNewPicLink.classList.remove("d-none");
     else {
       navNewPicLink.classList.add("d-none");

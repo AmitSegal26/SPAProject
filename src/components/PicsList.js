@@ -91,7 +91,7 @@ const createItem = (id, name, img, credit, description, price) => {
         </div>
         <div class="col-md-2">
         <button type="button" class="btn btn-success w-100" id="home-pic-list-buy-btn_${id}">
-          <i class="bi bi-currency-dollar"></i> Buy now
+          <i class="bi bi-cart-plus"></i> Add To Cart
         </button>
         ${isBusiness ? businessBtns : ""}
         </div>

@@ -44,11 +44,15 @@ const updateCart = () => {
     //empty
     cartEmpty.classList.add("d-block");
     cartEmpty.classList.remove("d-none");
+    document.getElementById("cart-link-icon").classList.add("bi-cart");
+    document.getElementById("cart-link-icon").classList.remove("bi-cart-fill");
     createCart();
     return;
   } else {
     cartEmpty.classList.remove("d-block");
     cartEmpty.classList.add("d-none");
+    document.getElementById("cart-link-icon").classList.remove("bi-cart");
+    document.getElementById("cart-link-icon").classList.add("bi-cart-fill");
   }
   createCart();
 };
