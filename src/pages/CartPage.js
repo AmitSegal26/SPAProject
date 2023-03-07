@@ -140,20 +140,19 @@ const removePic = (idOfSelectedPic) => {
 const findPicFromCartById = (idOfSelectedPic) => {
   let picsArrOfLocalStorage = JSON.parse(localStorage.getItem("pics"));
   let selectedPic = new Picture();
-  for (let item of activeUser.cart) {
-    for (let pic of picsArrOfLocalStorage) {
-      if (item === pic.id) {
-        selectedPic.id = pic.id;
-        selectedPic.imgUrl = pic.imgUrl;
-        selectedPic.name = pic.name;
-        selectedPic.credit = pic.credit;
-        selectedPic.description = pic.description;
-        selectedPic.price = pic.price;
-        selectedPic.dateCreated = pic.dateCreated;
-        break;
-      }
+
+  for (let pic of picsArrOfLocalStorage) {
+    if (+idOfSelectedPic === pic.id) {
+      selectedPic.id = pic.id;
+      selectedPic.imgUrl = pic.imgUrl;
+      selectedPic.name = pic.name;
+      selectedPic.credit = pic.credit;
+      selectedPic.description = pic.description;
+      selectedPic.price = pic.price;
+      selectedPic.dateCreated = pic.dateCreated;
+
+      return selectedPic;
     }
-    return selectedPic;
   }
 };
 
