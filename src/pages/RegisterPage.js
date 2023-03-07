@@ -417,7 +417,6 @@ window.addEventListener("load", () => {
       houseOk &&
       phoneOk
     );
-    //   gotta change that!
   };
 }
 

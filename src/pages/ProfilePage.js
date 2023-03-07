@@ -432,7 +432,6 @@ profilePasswordBtn.addEventListener("click", () => {
       houseOk &&
       phoneOk
     );
-    //   gotta change that!
   };
 }
 
