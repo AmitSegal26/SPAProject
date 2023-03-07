@@ -55,7 +55,6 @@ const updateCart = () => {
 const createCart = () => {
   let innerStr = "";
   clearEventListeners("cart-pic-remove-btn", handleRemoveBtn);
-  clearEventListeners("cart-pic-picture", handleImageClick);
   let picsArrOfLocalStorage = JSON.parse(localStorage.getItem("pics"));
   if (!picsArrOfLocalStorage) {
     return;
@@ -76,7 +75,6 @@ const createCart = () => {
   }
   cartContent.innerHTML = innerStr;
   createBtnEventListener("cart-pic-remove-btn", handleRemoveBtn);
-  createBtnEventListener("cart-pic-picture", handleImageClick);
 };
 
 const createItemforCart = (id, img, name, credit, description, price) => {
