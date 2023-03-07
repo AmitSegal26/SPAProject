@@ -2,7 +2,7 @@
 
 ## Welcome to my website - Amit's Gallery Shop
 
-# very important to cleat the local storage memory, thats because some of the local storage key names might be identical amongst the other students. ENJOY THE WEBSITE!
+# very important to clean the local storage memory, thats because some of the local storage key names might be identical amongst the other students. ENJOY THE WEBSITE!
 
 ### For the tester convinience - there are 2 users ready for testing the website.
 
