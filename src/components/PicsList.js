@@ -3,17 +3,20 @@ let listDiv; //הדיב של הרשימה עצמה (העוטף)
 let isBusiness;
 let deletePic; // a variable that will get a function as a value
 let showPopup; //a variable that will get a function as a value
+let addToCart; //a variable that will get a function as a value
 //this function will transfer data from homepage to this page
 const initialPicsList = (
   picsArrFromHomePage,
   isBusinessParameter,
   deletePicFromHomePage,
-  showPopupFromHomePage
+  showPopupFromHomePage,
+  addToCartFunc
 ) => {
   listDiv = document.getElementById("home-list-content");
   isBusiness = isBusinessParameter;
   deletePic = deletePicFromHomePage;
   showPopup = showPopupFromHomePage;
+  addToCart = addToCartFunc;
   updatePicsList(picsArrFromHomePage);
 };
 
@@ -34,7 +37,9 @@ const createList = () => {
   //clear event listeners for edit btns
   clearEventListeners("home-pic-list-edit-btn", handleEditBtnClick);
   // clear event listeners for images
-  clearEventListeners("home-pic-gallery-picture", handleImageClick);
+  clearEventListeners("home-pic-list-picture", handleImageClick);
+  // clear event listeners for buy btns
+  clearEventListeners("home-pic-list-buy-btn", handleBuyBtnClick);
   //create new elements and remove old ones
   for (let pic of picsArr) {
     innerStr += createItem(
@@ -53,6 +58,8 @@ const createList = () => {
   createBtnEventListener("home-pic-list-edit-btn", handleEditBtnClick);
   // add event listeners for images
   createBtnEventListener("home-pic-list-picture", handleImageClick);
+  // add event listeners for buy btns
+  createBtnEventListener("home-pic-list-buy-btn", handleBuyBtnClick);
 };
 
 const createItem = (id, name, img, credit, description, price) => {
@@ -83,7 +90,7 @@ const createItem = (id, name, img, credit, description, price) => {
         </div>
         </div>
         <div class="col-md-2">
-        <button type="button" class="btn btn-success w-100">
+        <button type="button" class="btn btn-success w-100" id="home-pic-list-buy-btn_${id}">
           <i class="bi bi-currency-dollar"></i> Buy now
         </button>
         ${isBusiness ? businessBtns : ""}
@@ -116,6 +123,10 @@ const handleEditBtnClick = (ev) => {
 
 const handleImageClick = (ev) => {
   showPopup(getIdFromClick(ev), false);
+};
+
+const handleBuyBtnClick = (ev) => {
+  addToCart(getIdFromClick(ev));
 };
 
 const clearEventListeners = (idKeyword, handleFunction) => {

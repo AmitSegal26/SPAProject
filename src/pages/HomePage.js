@@ -30,7 +30,7 @@ window.addEventListener("load", () => {
   originalPicsArr = [...picsArr];
   isBusiness = checkIfBusiness();
 
-  initialPicsList(picsArr, isBusiness, deletePic, showPopup);
+  initialPicsList(picsArr, isBusiness, deletePic, showPopup, addToCart);
   initialPicsGallery(picsArr, isBusiness, deletePic, showPopup, addToCart);
   initialPicsCarousel(picsArr, showPopup);
   document.getElementById("home-search").classList.add("d-none");

@@ -43,6 +43,7 @@ const updateCart = () => {
     //empty
     cartEmpty.classList.add("d-block");
     cartEmpty.classList.remove("d-none");
+    createCart();
     return;
   } else {
     cartEmpty.classList.remove("d-block");
