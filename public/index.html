@@ -71,6 +71,58 @@
     <br><br><br>
     <div class="container">
         <main>
+            <!-- Popup -->
+            <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="home-popup-wrapper">
+                <div class="popup-div" id="home-actual-popup">
+                    <div class="card">
+                        <img src="${img}" class="card-img-top" alt="${name}" id="popup-image" />
+                        <div class="card-body">
+                            <h5 class="card-title" id="home-popup-title">
+                                <h5 id="home-popup-date"></h5>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="popup-name" placeholder="Name" />
+                                    <label for="popup-name">Name</label>
+                                </div>
+                            </h5>
+                            <div class="card-text">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="description"
+                                        id="popup-description"></textarea>
+                                    <label for="popup-description">Description</label>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="popup-price" placeholder="Price" />
+                                    <label for="popup-price">Price</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="popup-credit" placeholder="Credit" />
+                                    <label for="popup-credit">Credit</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="popup-image-url" placeholder="Img" />
+                                    <label for="popup-image-url">Img</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success" id="popup-save-btn">
+                                <i class="bi bi-check-circle-fill"></i> Save
+                            </button>
+                            <button type="button" class="btn btn-danger" id="popup-cancel-btn">
+                                <i id="popup-cancel-btn-icon" class="bi bi-x-circle-fill"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- CART PAGE -->
             <div id="cart-page" class="d-none">
                 <h1>Cart Page</h1>
@@ -102,61 +154,7 @@
                 <h4>Welcome to Amit's Gallery Shop! Here down below you can see our products:</h4>
                 <h6>Enter our 'About' page, so you can learn more about the website!</h6>
                 <hr>
-                <!-- Popup -->
-                <div class="popup-wrapper d-flex justify-content-center align-items-center d-none"
-                    id="home-popup-wrapper">
-                    <div class="popup-div" id="home-actual-popup">
-                        <div class="card">
-                            <img src="${img}" class="card-img-top" alt="${name}" id="popup-image" />
-                            <div class="card-body">
-                                <h5 class="card-title" id="home-popup-title">
-                                    <h5 id="home-popup-date"></h5>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="popup-name" placeholder="Name" />
-                                        <label for="popup-name">Name</label>
-                                    </div>
-                                </h5>
-                                <div class="card-text">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="description"
-                                            id="popup-description"></textarea>
-                                        <label for="popup-description">Description</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="popup-price" placeholder="Price" />
-                                        <label for="popup-price">Price</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="popup-credit"
-                                            placeholder="Credit" />
-                                        <label for="popup-credit">Credit</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="popup-image-url"
-                                            placeholder="Img" />
-                                        <label for="popup-image-url">Img</label>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="card-body">
-                                <button type="button" class="btn btn-success" id="popup-save-btn">
-                                    <i class="bi bi-check-circle-fill"></i> Save
-                                </button>
-                                <button type="button" class="btn btn-danger" id="popup-cancel-btn">
-                                    <i id="popup-cancel-btn-icon" class="bi bi-x-circle-fill"></i> Cancel
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- display+sorting buttons -->
                 <div id="home-display-options" class="d-flex justify-content-between">
                     <div class="d-flex">

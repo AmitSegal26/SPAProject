@@ -1,4 +1,5 @@
 import { initPopup } from "../components/Popup.js";
+import Picture from "../models/Picture.js";
 
 let token = JSON.parse(localStorage.getItem("token"));
 let usersArr = JSON.parse(localStorage.getItem("users"));
@@ -55,6 +56,7 @@ const updateCart = () => {
 const createCart = () => {
   let innerStr = "";
   clearEventListeners("cart-pic-remove-btn", handleRemoveBtn);
+  clearEventListeners("cart-pic-picture", handleImageClick);
   let picsArrOfLocalStorage = JSON.parse(localStorage.getItem("pics"));
   if (!picsArrOfLocalStorage) {
     return;
@@ -75,6 +77,7 @@ const createCart = () => {
   }
   cartContent.innerHTML = innerStr;
   createBtnEventListener("cart-pic-remove-btn", handleRemoveBtn);
+  createBtnEventListener("cart-pic-picture", handleImageClick);
 };
 
 const createItemforCart = (id, img, name, credit, description, price) => {
@@ -134,12 +137,31 @@ const removePic = (idOfSelectedPic) => {
   updateCart();
 };
 
+const findPicFromCartById = (idOfSelectedPic) => {
+  let picsArrOfLocalStorage = JSON.parse(localStorage.getItem("pics"));
+  let selectedPic = new Picture();
+  for (let item of activeUser.cart) {
+    for (let pic of picsArrOfLocalStorage) {
+      if (item === pic.id) {
+        selectedPic.id = pic.id;
+        selectedPic.imgUrl = pic.imgUrl;
+        selectedPic.name = pic.name;
+        selectedPic.credit = pic.credit;
+        selectedPic.description = pic.description;
+        selectedPic.price = pic.price;
+        selectedPic.dateCreated = pic.dateCreated;
+        break;
+      }
+    }
+    return selectedPic;
+  }
+};
+
 const handleImageClick = (ev) => {
-  initPopup(getIdFromClick(ev), null, false);
+  initPopup(findPicFromCartById(getIdFromClick(ev)), null, false);
 };
 
 const handleRemoveBtn = (ev) => {
-  console.log("CLICKED REMOVE " + getIdFromClick(ev));
   removePic(getIdFromClick(ev));
 };
 const clearEventListeners = (idKeyword, handleFunction) => {

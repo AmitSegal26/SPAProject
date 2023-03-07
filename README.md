@@ -2,6 +2,8 @@
 
 ## Welcome to my website - Amit's Gallery Shop
 
+# very important to cleat the local storage memory, thats because some of the local storage key names might be identical amongst the other students. ENJOY THE WEBSITE!
+
 ### For the tester convinience - there are 2 users ready for testing the website.
 
 Amit (business/admin account):
@@ -28,6 +30,11 @@ Once you have an account **(if you dont have one, you can click the new account 
 ## Profile Page
 
 At the profile page you can edit your information! name, email, phone number, address, even your password (requires another step to edit - press the "edit password" button and you are good to go).
+
+## Cart Page (BONUS)
+
+As you will see, at the navbar you have a link to the cart page, there you can see the pictures you have added to your cart. Unfortunately, due to technical problems (no server found) you cannot yet purchase them completely. But don't you worry, once we finish establishing the web site you will be able to purchase the pictures and get your own GalleryPic!
+You can add the pictures to your cart at the home page using the 'gallery' and the 'list' displays. If you wish to remove some of the items out of the cart, press the 'remove' button.
 
 ## About Page
 

@@ -103,13 +103,15 @@ window.addEventListener("load", () => {
     selectedPic.description = popupDescription.value;
     selectedPic.price = popupPrice.value;
     selectedPic.imgUrl = popupImageUrl.value;
-    selectedPic.dateCreated = `${
-      date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
-    }/${
-      date.getMonth() + 1 < 10
-        ? "0" + (date.getMonth() + 1)
-        : date.getMonth() + 1
-    }/${date.getFullYear()}`;
+    if (!selectedPic.dateCreated) {
+      selectedPic.dateCreated = `${
+        date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
+      }/${
+        date.getMonth() + 1 < 10
+          ? "0" + (date.getMonth() + 1)
+          : date.getMonth() + 1
+      }/${date.getFullYear()}`;
+    }
     editOrAddPicFunction(selectedPic);
     enableScrollingOfBody();
     hidePopup();
