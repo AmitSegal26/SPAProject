@@ -94,8 +94,12 @@ window.addEventListener("load", () => {
       return;
     }
     const date = new Date();
+    //setting new values for the picture edit/adding
     selectedPic.name = popupName.value;
     selectedPic.credit = popupCredit.value;
+    popupCredit.value === ""
+      ? (selectedPic.credit = "Unknown")
+      : (selectedPic.credit = popupCredit.value);
     selectedPic.description = popupDescription.value;
     selectedPic.price = popupPrice.value;
     selectedPic.imgUrl = popupImageUrl.value;
