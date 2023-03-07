@@ -6,6 +6,7 @@ class User {
   password;
   address;
   isBusiness;
+  cart;
 
   constructor(id, name, email, phone, password, address, isBusiness) {
     this.id = id;

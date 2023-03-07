@@ -71,6 +71,31 @@
     <br><br><br>
     <div class="container">
         <main>
+            <!-- CART PAGE -->
+            <div id="cart-page" class="d-none">
+                <h1>Cart Page</h1>
+                <div id="cart-before-login" class="d-none">
+                    <h2>You must log in first in order to see our own cart</h2>
+                    <div class="col-12 my-1">
+                        <a id="link-to-login-page-from-cart" href="#"
+                            class="text-primary text-decoration-underline">Click here
+                            to
+                            login</a>
+                    </div>
+                </div>
+                <div id="cart-empty" class="d-none">
+                    <h2 class="alert alert-warning">You dont have items in your cart! press the 'Home' link at the
+                        nav
+                        bar
+                        or the link below</h2>
+                    <div class="col-12 my-1">
+                        <a id="link-to-home-page-from-cart" href="#"
+                            class="text-primary text-decoration-underline">Click here
+                            to go to home page</a>
+                    </div>
+                </div>
+                <div id="cart-content" class="row row-cols-1 row-cols-md-3 g-4"></div>
+            </div>
             <!-- HOME PAGE -->
             <div id="home-page" class="d-block">
                 <h1>Home Page</h1>
@@ -720,10 +745,6 @@
                         <a href="#" id="page404-to-home-link" class="btn btn-primary">Go Home</a>
                     </div>
                 </div>
-            </div>
-            <!-- CART PAGE -->
-            <div id="cart-page" class="d-none">
-                <h1>Cart Page</h1>
             </div>
         </main>
     </div>

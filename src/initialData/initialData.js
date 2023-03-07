@@ -78,6 +78,7 @@ const setInitialUsers = () => {
   }
   localStorage.setItem("users", JSON.stringify(createUsers()));
   localStorage.setItem("nextuserid", userId + "");
+  localStorage.removeItem("token");
 };
 
 setInitialData();

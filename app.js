@@ -5,6 +5,7 @@ import "./src/pages/RegisterPage.js";
 import "./src/pages/LoginPage.js";
 import "./src/pages/ProfilePage.js";
 import "./src/pages/HomePage.js";
+import "./src/pages/CartPage.js";
 import showNewPopup from "./src/pages/HomePage.js";
 import makeInputsAsTokenConnected from "./src/pages/ProfilePage.js";
 
@@ -30,6 +31,8 @@ const registerCancelToHome = document.getElementById("register-cancel-btn");
 const profileCancelToHome = document.getElementById("profile-cancel-btn");
 const navNewPicLink = document.getElementById("nav-add-new-picture-link");
 const navCartLink = document.getElementById("nav-cart-link");
+const cartToLoginLink = document.getElementById("link-to-login-page-from-cart");
+const cartToHomeLink = document.getElementById("link-to-home-page-from-cart");
 
 window.addEventListener("load", () => {
   let token = JSON.parse(localStorage.getItem("token"));
@@ -79,6 +82,10 @@ profileCancelToHome.addEventListener("click", () => {
 registerCancelToHome.addEventListener("click", () => {
   handlePageChange(PAGES.HOME);
 });
+cartToHomeLink.addEventListener("click", () => {
+  handlePageChange(PAGES.HOME);
+  document.getElementById("home-display-gallery-btn").click();
+});
 navAboutLink.addEventListener("click", () => {
   handlePageChange(PAGES.ABOUT);
 });
@@ -104,7 +111,9 @@ navCartLink.addEventListener("click", () => {
 navNewPicLink.addEventListener("click", () => {
   showNewPopup();
 });
-
+cartToLoginLink.addEventListener("click", () => {
+  handlePageChange(PAGES.LOGIN);
+});
 navLogOutLink.addEventListener("click", () => {
   localStorage.removeItem("token");
   location.reload();

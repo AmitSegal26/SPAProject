@@ -9,6 +9,7 @@ import {
   updatePicsCarousel,
 } from "../components/PicsCarousel.js";
 import { initPopup } from "../components/Popup.js";
+import updateCart from "./CartPage.js";
 
 const displayGalleryBtn = document.getElementById("home-display-gallery-btn");
 const displayListBtn = document.getElementById("home-display-list-btn");
@@ -30,7 +31,7 @@ window.addEventListener("load", () => {
   isBusiness = checkIfBusiness();
 
   initialPicsList(picsArr, isBusiness, deletePic, showPopup);
-  initialPicsGallery(picsArr, isBusiness, deletePic, showPopup);
+  initialPicsGallery(picsArr, isBusiness, deletePic, showPopup, addToCart);
   initialPicsCarousel(picsArr, showPopup);
   document.getElementById("home-search").classList.add("d-none");
 });
@@ -112,6 +113,37 @@ const showNewPopup = () => {
 const editPic = () => {
   saveToLocalStorage(originalPicsArr);
   updateDisplays();
+};
+
+const addToCart = (idOfSelectedPic) => {
+  let token = localStorage.getItem("token");
+  if (!token) {
+    alert("you must log in first! Press the 'Login' link at the nav bar");
+    return;
+  }
+  token = JSON.parse(token);
+
+  let usersArr = JSON.parse(localStorage.getItem("users"));
+  let activeUser = usersArr.find((item) => item.id === token.id);
+  if (!activeUser.cart) {
+    activeUser.cart = [+idOfSelectedPic];
+  } else {
+    for (let item of activeUser.cart) {
+      if (+idOfSelectedPic === item) {
+        alert("already has this in your cart!");
+        return;
+      }
+    }
+    activeUser.cart = [...activeUser.cart, +idOfSelectedPic];
+  }
+  for (let user of usersArr) {
+    if (activeUser.id === user.id) {
+      user.cart = activeUser.cart;
+      break;
+    }
+  }
+  localStorage.setItem("users", JSON.stringify(usersArr));
+  updateCart();
 };
 
 const saveToLocalStorage = (arrToSave) => {
