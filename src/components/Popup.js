@@ -36,15 +36,21 @@ const initPopup = (
   popupImageUrl.value = selectedPic.imgUrl;
   popupDate.innerText = `Created At: ${selectedPic.dateCreated}`;
   if (!isForEditOrAdding) {
-    //if for showing information when clicking on the image
+    //is for showing information when clicking on the image
     enableDisableInputs(true);
     saveBtn.classList.add("d-none");
     document.getElementById("popup-cancel-btn").classList.add("d-none");
+    document
+      .getElementById("popup-img-url-labelAndInput")
+      .classList.add("d-none");
   } else {
     //is for editing or adding the inputs
     enableDisableInputs(false);
     saveBtn.classList.remove("d-none");
     document.getElementById("popup-cancel-btn").classList.remove("d-none");
+    document
+      .getElementById("popup-img-url-labelAndInput")
+      .classList.remove("d-none");
   }
   showPopup();
   //scrolls the popup to the top each time you open it
@@ -104,6 +110,7 @@ window.addEventListener("load", () => {
     selectedPic.price = popupPrice.value;
     selectedPic.imgUrl = popupImageUrl.value;
     if (!selectedPic.dateCreated) {
+      //if the date is null - then it is a new picture. that way we can differ from editing and adding function
       selectedPic.dateCreated = `${
         date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
       }/${
