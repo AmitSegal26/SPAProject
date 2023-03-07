@@ -69,11 +69,15 @@ const makeInputsAsTokenConnected = () => {
   inputPassword.value = activeUser.password;
   inputReEnterPassword.value = activeUser.password;
   inputIsBusiness.checked = activeUser.isBusiness;
+  inputPassword.disabled = true;
+  inputReEnterPassword.disabled = true;
+  inputEmail.disabled = true;
 };
 
 profilePasswordBtn.addEventListener("click", () => {
   inputPassword.removeAttribute("disabled");
   inputReEnterPassword.removeAttribute("disabled");
+  inputEmail.removeAttribute("disabled");
 });
 
 {
@@ -399,6 +403,12 @@ profileBtn.addEventListener("click", () => {
   const response = confirm("Are you sure you want to change details?");
   if (!response) {
     makeInputsAsTokenConnected();
+    return;
+  }
+  let userOfEmail = users.find((item) => item.email === inputEmail.value);
+  let user = users.find((item) => item.id === token.id);
+  if (userOfEmail && user.id !== userOfEmail.id) {
+    alert("Email already exists!");
     return;
   }
   for (let user of users) {

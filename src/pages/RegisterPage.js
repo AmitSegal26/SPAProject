@@ -86,9 +86,6 @@ window.addEventListener("load", () => {
   inputReEnterPassword.addEventListener("input", () => {
     checkReEnterPasswordInput();
   });
-  inputIsBusiness.addEventListener("change", () => {
-    isBusiness = inputIsBusiness.checked;
-  });
   // ///////////////////////////////////////////////
 
   // First Name checking function
