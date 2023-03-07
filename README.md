@@ -2,8 +2,8 @@
 
 ## Welcome to my website - Amit's Gallery Shop
 
-Inline-style:
-![alt text](./public/assets/imgs/favicon.png "Logo Title")
+Logo:
+![logo](./public/assets/imgs/favicon.png "Logo Title")
 
 # very important to clean the local storage memory, thats because some of the local storage key names might be identical amongst the other students. ENJOY THE WEBSITE!
 
