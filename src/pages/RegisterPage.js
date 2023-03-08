@@ -456,6 +456,12 @@ registerBtn.addEventListener("click", () => {
     return;
   }
   let userId = JSON.parse(localStorage.getItem("nextuserid"));
+  if (!userId) {
+    alert(
+      "An issue accured: someone deleted the `nextuserid` from the local storage 😁"
+    );
+    return;
+  }
   /* in case someone deletes the data of users from local storage WHIILE registering using devTools, we should make sure
      that the id starts from 1.
      if there is no value at the key "nextuserid", then it would put the value zero at the property user.id.

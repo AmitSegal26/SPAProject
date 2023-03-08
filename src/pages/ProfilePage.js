@@ -436,6 +436,12 @@ profilePasswordBtn.addEventListener("click", () => {
 }
 
 profileBtn.addEventListener("click", () => {
+  if (!localStorage.getItem("users")) {
+    alert(
+      "An Issue Accured: someone deleted the users data from the local storage 😁"
+    );
+    return;
+  }
   const response = confirm("Are you sure you want to change details?");
   if (!response) {
     makeInputsAsTokenConnected();
