@@ -47,22 +47,30 @@ window.addEventListener("load", () => {
     if (
       JSON.parse(localStorage.getItem("users")).find(
         (user) => token.id === user.id
-      ).cart.length !== 0
+      ).cart !== undefined
     ) {
-      //if user has items in cart
-      //! just asthetics of the website, nothing neccessary
-      document.getElementById("cart-link-icon").classList.remove("bi-cart");
-      document.getElementById("cart-link-icon").classList.add("bi-cart-fill");
-    } else {
-      document.getElementById("cart-link-icon").classList.add("bi-cart");
-      document
-        .getElementById("cart-link-icon")
-        .classList.remove("bi-cart-fill");
+      if (
+        JSON.parse(localStorage.getItem("users")).find(
+          (user) => token.id === user.id
+        ).cart.length !== 0
+      ) {
+        //if user has items in cart
+        //! just asthetics of the website, nothing neccessary
+        document.getElementById("cart-link-icon").classList.remove("bi-cart");
+        document.getElementById("cart-link-icon").classList.add("bi-cart-fill");
+      } else {
+        document.getElementById("cart-link-icon").classList.add("bi-cart");
+        document
+          .getElementById("cart-link-icon")
+          .classList.remove("bi-cart-fill");
+      }
     }
     if (token.isBusiness) {
       NewPicLink.classList.remove("d-none");
+      NewPicLink.classList.add("d-block");
     } else {
       NewPicLink.classList.add("d-none");
+      NewPicLink.classList.remove("d-block");
     }
   }
   handlePageChange(PAGES.HOME);
