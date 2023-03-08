@@ -436,13 +436,6 @@ profilePasswordBtn.addEventListener("click", () => {
 }
 
 profileBtn.addEventListener("click", () => {
-  let activeUserCart;
-  for (let user of users) {
-    if (user.id === token.id) {
-      activeUserCart = [...user.cart];
-      break;
-    }
-  }
   if (!localStorage.getItem("users")) {
     alert(
       "An Issue Accured: someone deleted the users data from the local storage 😁"
@@ -461,6 +454,15 @@ profileBtn.addEventListener("click", () => {
     inputEmail.value = token.email;
     return;
   }
+  let activeUserCart;
+  users = JSON.parse(localStorage.getItem("users"));
+  for (let user of users) {
+    if (user.id === token.id) {
+      activeUserCart = user.cart;
+      break;
+    }
+  }
+
   for (let user of users) {
     if (user.id === token.id) {
       user.name = inputFirstName.value + " " + inputLastName.value;
