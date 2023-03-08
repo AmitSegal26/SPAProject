@@ -61,12 +61,8 @@ window.addEventListener("load", () => {
     }
     if (token.isBusiness) {
       NewPicLink.classList.remove("d-none");
-      document.getElementById("navIsBizIcon").classList.remove("d-none");
-      document.getElementById("navIsBizIcon").classList.add("d-block");
     } else {
       NewPicLink.classList.add("d-none");
-      document.getElementById("navIsBizIcon").classList.remove("d-block");
-      document.getElementById("navIsBizIcon").classList.add("d-none");
     }
   }
   handlePageChange(PAGES.HOME);
