@@ -7,6 +7,12 @@ Logo:
 
 # very important to clean the local storage memory, thats because some of the local storage key names might be identical amongst the other students. ENJOY THE WEBSITE!
 
+# The website uses Bootstrap files for decorations including icons. its a live server based website which means it should work when a live server is on!
+
+# The website uses object oriented coding methods and functioning methods.
+
+# The website is for practicing JS Advanced!
+
 ### For the tester convinience - there are 2 users ready for testing the website.
 
 Amit (business/admin account):
