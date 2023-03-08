@@ -29,7 +29,7 @@ const registerToLoginLink = document.getElementById("link-to-login-page");
 const loginCancelToHome = document.getElementById("login-cancel-btn");
 const registerCancelToHome = document.getElementById("register-cancel-btn");
 const profileCancelToHome = document.getElementById("profile-cancel-btn");
-const navNewPicLink = document.getElementById("nav-add-new-picture-link");
+const NewPicLink = document.getElementById("nav-add-new-picture-link");
 const navCartLink = document.getElementById("nav-cart-link");
 const cartToLoginLink = document.getElementById("link-to-login-page-from-cart");
 const cartToHomeLink = document.getElementById("link-to-home-page-from-cart");
@@ -60,9 +60,13 @@ window.addEventListener("load", () => {
         .classList.remove("bi-cart-fill");
     }
     if (token.isBusiness) {
-      navNewPicLink.classList.remove("d-none");
+      NewPicLink.classList.remove("d-none");
+      document.getElementById("navIsBizIcon").classList.remove("d-none");
+      document.getElementById("navIsBizIcon").classList.add("d-block");
     } else {
-      navNewPicLink.classList.add("d-none");
+      NewPicLink.classList.add("d-none");
+      document.getElementById("navIsBizIcon").classList.remove("d-block");
+      document.getElementById("navIsBizIcon").classList.add("d-none");
     }
   }
   handlePageChange(PAGES.HOME);
@@ -124,7 +128,7 @@ navProfileLink.addEventListener("click", () => {
 navCartLink.addEventListener("click", () => {
   handlePageChange(PAGES.CART);
 });
-navNewPicLink.addEventListener("click", () => {
+NewPicLink.addEventListener("click", () => {
   showNewPopup();
 });
 cartToLoginLink.addEventListener("click", () => {
