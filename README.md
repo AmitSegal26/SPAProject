@@ -1,5 +1,7 @@
 # Single Page Application
 
+https://amitsegal26.github.io/SPAProject.github.io/
+
 ## Welcome to my website - Amit's Gallery Shop
 
 Logo:
