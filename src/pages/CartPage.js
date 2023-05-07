@@ -184,4 +184,6 @@ const createBtnEventListener = (idKeyword, handleFunction) => {
   }
 };
 
+export { removePic };
+
 export default updateCart;

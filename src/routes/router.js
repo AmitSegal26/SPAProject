@@ -54,6 +54,7 @@ function handlePageChange(pageToDisplay) {
     default:
       PAGE404PAGE.classList.remove("d-none");
       PAGE404PAGE.classList.add("d-block");
+      break;
   }
 }
 

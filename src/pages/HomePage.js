@@ -10,6 +10,7 @@ import {
 } from "../components/PicsCarousel.js";
 import { initPopup } from "../components/Popup.js";
 import updateCart from "./CartPage.js";
+import { removePic } from "./CartPage.js";
 
 const displayGalleryBtn = document.getElementById("home-display-gallery-btn");
 const displayListBtn = document.getElementById("home-display-list-btn");
@@ -79,6 +80,7 @@ const deletePic = (id) => {
   saveToLocalStorage(originalPicsArr);
   picsArr = picsArr.filter((item) => item.id !== id); //delete pic by index
   updateDisplays();
+  removePic(id);
 };
 
 const updateDisplays = () => {
