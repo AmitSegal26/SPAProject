@@ -1,763 +1,1321 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <link rel="icon" type="image/x-icon" href="../public/assets/imgs/favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../public/assets/imgs/favicon.png"
+    />
     <!-- links to Bootstrap -->
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
     <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
     <!-- icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
 
     <title>Amit's Gallery Shop</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary position-fixed w-100">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#" id="nav-icon-link">
-                    <img src="./assets/imgs/favicon.png" width="30" height="30" class="d-inline-block align-top"
-                        alt="Logo" title="Logo">
-                    Amit's Gallery Shop
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-primary position-fixed w-100"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="nav-icon-link">
+            <img
+              src="./assets/imgs/favicon.png"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt="Logo"
+              title="Logo"
+            />
+            Amit's Gallery Shop
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-white" id="navbarNav">
+            <ul class="navbar-nav me-auto my-2 my-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="#"
+                  id="nav-home-link"
+                  >Home <i class="bi bi-house"></i
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="nav-about-link"
+                  >About <i class="bi bi-info-circle-fill"></i
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="nav-cart-link"
+                  >Cart <i id="cart-link-icon" class="bi bi-cart"></i
+                ></a>
+              </li>
+            </ul>
+            <form
+              class="d-flex responsive-nav-flex"
+              role="search"
+              id="navBeforeLogin"
+            >
+              <a class="nav-link me-3" href="#" id="nav-register-link"
+                >Register</a
+              >
+              <a class="nav-link responsive-mt" href="#" id="nav-login-link"
+                >Login <i class="bi bi-box-arrow-in-right"></i
+              ></a>
+            </form>
+            <form
+              class="d-flex responsive-nav-flex d-none"
+              role="search"
+              id="navAfterLogin"
+            >
+              <ul class="nav-item dropdown">
+                <a
+                  id="nav-profile-name"
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Name
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse text-white" id="navbarNav">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" id="nav-home-link">Home <i
-                                    class="bi bi-house"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="nav-about-link">About <i
-                                    class="bi bi-info-circle-fill"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="nav-cart-link">Cart <i id="cart-link-icon"
-                                    class="bi bi-cart"></i></a>
-                        </li>
-
-                    </ul>
-                    <form class="d-flex responsive-nav-flex" role="search" id="navBeforeLogin">
-                        <a class="nav-link me-3" href="#" id="nav-register-link">Register</a>
-                        <a class="nav-link responsive-mt" href="#" id="nav-login-link">Login <i
-                                class="bi bi-box-arrow-in-right"></i></a>
-                    </form>
-                    <form class="d-flex responsive-nav-flex d-none" role="search" id="navAfterLogin">
-                        <ul class="nav-item dropdown">
-                            <a id="nav-profile-name" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Name
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link me-3" href="#" id="nav-profile-link"><i
-                                            class="bi bi-person-square"></i>Profile</a></li>
-                                <li><a class="nav-link responsive-mt" href="#" id="nav-logout-link"><i
-                                            class="bi bi-door-open"></i>Logout</a></li>
-
-                            </ul>
-                        </ul>
-                    </form>
-                </div>
-            </div>
-        </nav>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="nav-link me-3" href="#" id="nav-profile-link"
+                      ><i class="bi bi-person-square"></i>Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="nav-link responsive-mt"
+                      href="#"
+                      id="nav-logout-link"
+                      ><i class="bi bi-door-open"></i>Logout</a
+                    >
+                  </li>
+                </ul>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
-    <br><br><br>
+    <br /><br /><br />
     <div class="container">
-        <main>
-            <!-- Popup -->
-            <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="home-popup-wrapper">
-                <div class="popup-div" id="home-actual-popup">
-                    <div class="card">
-                        <img src="${img}" class="card-img-top" alt="${name}" id="popup-image" />
-                        <div class="card-body">
-                            <h5 class="card-title" id="home-popup-title">
-                                <h5 id="home-popup-date"></h5>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="popup-name" placeholder="Name" />
-                                    <label for="popup-name">Name</label>
-                                </div>
-                            </h5>
-                            <div class="card-text">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="description"
-                                        id="popup-description"></textarea>
-                                    <label for="popup-description">Description</label>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="popup-price" placeholder="Price" />
-                                    <label for="popup-price">Price</label>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="popup-credit" placeholder="Credit" />
-                                    <label for="popup-credit">Credit</label>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="form-floating mb-3" id="popup-img-url-labelAndInput">
-                                    <input type="text" class="form-control" id="popup-image-url" placeholder="Img" />
-                                    <label for="popup-image-url">Img</label>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="card-body">
-                            <button type="button" class="btn btn-success" id="popup-save-btn">
-                                <i class="bi bi-check-circle-fill"></i> Save
-                            </button>
-                            <button type="button" class="btn btn-danger" id="popup-cancel-btn">
-                                <i id="popup-cancel-btn-icon" class="bi bi-x-circle-fill"></i> Cancel
-                            </button>
-                        </div>
-                    </div>
+      <main>
+        <!-- Popup -->
+        <div
+          class="popup-wrapper d-flex justify-content-center align-items-center d-none"
+          id="home-popup-wrapper"
+        >
+          <div class="popup-div" id="home-actual-popup">
+            <div class="card">
+              <img
+                src="${img}"
+                class="card-img-top"
+                alt="${name}"
+                id="popup-image"
+              />
+              <div class="card-body">
+                <h5 class="card-title" id="home-popup-title">
+                  <h5 id="home-popup-date"></h5>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="popup-name"
+                      placeholder="Name"
+                    />
+                    <label for="popup-name">Name</label>
+                  </div>
+                </h5>
+                <div class="card-text">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      placeholder="description"
+                      id="popup-description"
+                    ></textarea>
+                    <label for="popup-description">Description</label>
+                  </div>
                 </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="popup-price"
+                      placeholder="Price"
+                    />
+                    <label for="popup-price">Price</label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="popup-credit"
+                      placeholder="Credit"
+                    />
+                    <label for="popup-credit">Credit</label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div
+                    class="form-floating mb-3"
+                    id="popup-img-url-labelAndInput"
+                  >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="popup-image-url"
+                      placeholder="Img"
+                    />
+                    <label for="popup-image-url">Img</label>
+                  </div>
+                </li>
+              </ul>
+              <div class="card-body">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  id="popup-save-btn"
+                >
+                  <i class="bi bi-check-circle-fill"></i> Save
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  id="popup-cancel-btn"
+                >
+                  <i id="popup-cancel-btn-icon" class="bi bi-x-circle-fill"></i>
+                  Cancel
+                </button>
+              </div>
             </div>
-            <!-- CART PAGE -->
-            <div id="cart-page" class="d-none">
-                <h1>Cart Page</h1>
-                <div id="cart-before-login" class="d-none">
-                    <h2>You must log in first in order to see your own cart</h2>
-                    <div class="col-12 my-1">
-                        <a id="link-to-login-page-from-cart" href="#"
-                            class="text-primary text-decoration-underline">Click here
-                            to
-                            login</a>
-                    </div>
-                </div>
-                <div id="cart-empty" class="d-none">
-                    <h2 class="alert alert-warning">You dont have items in your cart! press the 'Home' link at the
-                        nav
-                        bar
-                        or the link below</h2>
-                    <div class="col-12 my-1">
-                        <a id="link-to-home-page-from-cart" href="#"
-                            class="text-primary text-decoration-underline">Click here
-                            to go to home page</a>
-                    </div>
-                </div>
-                <div id="cart-content" class="row row-cols-1 row-cols-md-3 g-4"></div>
+          </div>
+        </div>
+        <!-- CART PAGE -->
+        <div id="cart-page" class="d-none">
+          <h1>Cart Page</h1>
+          <div id="cart-before-login" class="d-none">
+            <h2>You must log in first in order to see your own cart</h2>
+            <div class="col-12 my-1">
+              <a
+                id="link-to-login-page-from-cart"
+                href="#"
+                class="text-primary text-decoration-underline"
+                >Click here to login</a
+              >
             </div>
-            <!-- HOME PAGE -->
-            <div id="home-page" class="d-block">
-                <h1>Home Page</h1>
-                <h4>Welcome to Amit's Gallery Shop! Here down below you can see our products:</h4>
-                <h6>Enter our 'About' page, so you can learn more about the website!</h6>
-                <hr>
-
-                <!-- display+sorting buttons -->
-                <div id="home-display-options" class="d-flex justify-content-between">
-                    <div class="d-flex">
-                        <button class="btn btn-outline-dark" id="home-display-carousel-btn"><i
-                                class="bi bi-images p-1 fs-3">
-                            </i></button>
-                        <button class="btn btn-outline-dark" id="home-display-list-btn"><i
-                                class="bi bi-list-ul p-1 fs-3">
-                            </i></button>
-                        <button class="btn btn-outline-dark" id="home-display-gallery-btn"><i
-                                class="bi bi-table p-1 fs-3">
-                            </i></button>
-                        <button class="btn btn-outline-secondary" id="home-display-sort-upwards"><i
-                                class="bi bi-sort-alpha-down"></i></button>
-                        <button class="btn btn-outline-secondary" id="home-display-sort-downwards"><i
-                                class="bi bi-sort-alpha-down-alt"></i></button>
-                        <button class="btn btn-outline-success d-none" id="nav-add-new-picture-link"><i
-                                class="bi bi-file-plus"></i> Add New Picture</button>
-                    </div>
-                    <input id="home-search" class="form-control mr-sm-2 align-self-start w-25" type="search"
-                        placeholder="Search" aria-label="Search">
-                </div>
-                <!-- GALLERY -->
-                <div id="home-display-gallery" class="d-none">
-                    <div id="home-gallery-content" class="row row-cols-1 row-cols-md-3 g-4">GALLERY</div>
-                </div>
-                <!-- LIST -->
-                <div id="home-display-list" class="d-none">
-                    <ul class="list-group" id="home-list-content">LIST</ul>
-                </div>
-                <!-- CAROUSEL -->
-                <div id="home-display-carousel" class="">
-                    <div id="carouselExampleDark" class="carousel carousel-dark slide">
-                        <div id="home-inside-carousel" class="carousel-inner">
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span id="home-carousel-next-btn" class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
+          </div>
+          <div id="cart-empty" class="d-none">
+            <h2 class="alert alert-warning">
+              You dont have items in your cart! press the 'Home' link at the nav
+              bar or the link below
+            </h2>
+            <div class="col-12 my-1">
+              <a
+                id="link-to-home-page-from-cart"
+                href="#"
+                class="text-primary text-decoration-underline"
+                >Click here to go to home page</a
+              >
             </div>
-            <!-- ABOUT PAGE -->
-            <div id="about-page" class="d-none">
-                <h1>About Page</h1>
-                <p class="bg-light p-3 w-100 rounded">Welcome to Amit's Gallery Shop, where art
-                    and
-                    beauty come
-                    together to create an exceptional shopping
-                    experience. At our gallery shop, you'll find an incredible selection of high-quality artworks,
-                    ranging from traditional to contemporary styles. From stunning paintings and photographs to unique
-                    sculptures and handcrafted pieces, we have something for everyone. Our mission is to bring the
-                    beauty and joy of art to your life, whether you're a seasoned collector or just starting out. Our
-                    knowledgeable staff is always on hand to provide you with personalized recommendations and expert
-                    advice. We invite you to browse our collection online or visit us in person to experience the beauty
-                    of our artwork firsthand. Thank you for choosing Amit's Gallery Shop for all your art needs.</p>
+          </div>
+          <div id="cart-content" class="row row-cols-1 row-cols-md-3 g-4"></div>
+        </div>
+        <!-- HOME PAGE -->
+        <div id="home-page" class="d-block">
+          <h1>Home Page</h1>
+          <h4>
+            Welcome to Amit's Gallery Shop! Here down below you can see our
+            products:
+          </h4>
+          <h6>
+            Enter our 'About' page, so you can learn more about the website!
+          </h6>
+          <hr />
 
-                <div class="col-md-10">
-                    <h2 class="fs-5">
-                        Here you will find an explanation of how the app works
-                    </h2>
-                </div>
-                <hr>
-                <h3>Any time you want you may click on a picture and it will show you more information!</h3>
-                <div class="p-5 border rounded h-25 bg-light center">
-                    <div>
-                        <h2 class="text-center">Slider (Carousel) Display</h2>
-                        <p>
-                            When on Slider Display, you may actually just as its name says! Slide the pictures shown as
-                            much as you want! Be carefull not to slide you computer tho...
-                        </p>
-                    </div>
-                    <button class="btn btn-dark border center rounded text-light" id="about-to-home-carousel-btn">Check
-                        Our
-                        Products!</button>
-                </div>
-                <hr>
-                <div class="p-5 m-2 border rounded h-25 center bg-dark text-light">
-                    <div class="px-4">
-                        <h2 class="text-center">Gallery Display</h2>
-                        <p>
-                            When on Cards Display, you may watch the gallery and add your wanted images to the cart!
-                            that way you'll be able to purchase them once you are finished!
-                        </p>
-                    </div>
-                    <button class="btn btn-light border center rounded" id="about-to-home-gallery-btn">Check
-                        Our
-                        Products!</button>
-                </div>
-                <hr>
-                <div class="p-5 m-2 border rounded h-25 bg-light center">
-                    <div class="px-4">
-                        <h2 class="text-center">List Display</h2>
-                        <p>
-                            When on Table Display, you may see the images as a list, if your account set as a business
-                            account, you may also edit the images or even add some!
-                        </p>
-                    </div>
-                    <button class="btn btn-dark border center rounded text-light" id="about-to-home-list-btn">Check
-                        Our
-                        Products!</button>
-                </div>
-
-
-
+          <!-- display+sorting buttons -->
+          <div id="home-display-options" class="d-flex justify-content-between">
+            <div class="d-flex">
+              <button
+                class="btn btn-outline-dark"
+                id="home-display-carousel-btn"
+              >
+                <i class="bi bi-images p-1 fs-3"> </i>
+              </button>
+              <button class="btn btn-outline-dark" id="home-display-list-btn">
+                <i class="bi bi-list-ul p-1 fs-3"> </i>
+              </button>
+              <button
+                class="btn btn-outline-dark"
+                id="home-display-gallery-btn"
+              >
+                <i class="bi bi-table p-1 fs-3"> </i>
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                id="home-display-sort-upwards"
+              >
+                <i class="bi bi-sort-alpha-down"></i>
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                id="home-display-sort-downwards"
+              >
+                <i class="bi bi-sort-alpha-down-alt"></i>
+              </button>
+              <button
+                class="btn btn-outline-success d-none"
+                id="nav-add-new-picture-link"
+              >
+                <i class="bi bi-file-plus"></i> Add New Picture
+              </button>
             </div>
-            <!-- LOGIN PAGE -->
-            <div id="login-page" class="d-none">
-                <h1>Login Page</h1>
-
-                <div class="col-12">
-                    <label for="login-email">Email <span class="text-danger">*</span>
-                    </label>
-                    <input placeholder="user@gmail.com" id="login-email-input" class="form-control" name="login-email"
-                        type="email" autocomplete="off">
-                    <span id="login-email-error" class="text-danger"></span>
-                </div>
-
-                <div class="col-12">
-                    <label for="login-password">Password <span class="text-danger">*</span>
-                    </label>
-                    <input placeholder="enter password" id="login-password-input" class="form-control"
-                        name="login-password" type="password" autocomplete="off">
-                    <span id="login-password-error" class="text-danger"></span>
-                </div>
-
-                <div class="col-12 my-1">
-                    Not registered yet?
-                    <a id="link-to-register-page" class="text-primary text-decoration-underline">Click here...</a>
-                </div>
-                <div class="col-12">
-                    <input id="login-submit-btn" type="button" class="btn btn-primary col-12 my-2" value="Login">
-
-                    <input type="button" class="btn btn-danger col-12 mb-2" value="Cancel" id="login-cancel-btn">
-                </div>
-
+            <input
+              id="home-search"
+              class="form-control mr-sm-2 align-self-start w-25"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </div>
+          <!-- GALLERY -->
+          <div id="home-display-gallery" class="d-none">
+            <div
+              id="home-gallery-content"
+              class="row row-cols-1 row-cols-md-3 g-4"
+            >
+              GALLERY
             </div>
-            <!-- REGISTER PAGE -->
-            <div id="register-page" class="d-none">
-                <h1>Register Page</h1>
+          </div>
+          <!-- LIST -->
+          <div id="home-display-list" class="d-none">
+            <ul class="list-group" id="home-list-content">
+              LIST
+            </ul>
+          </div>
+          <!-- CAROUSEL -->
+          <div id="home-display-carousel" class="">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide">
+              <div id="home-inside-carousel" class="carousel-inner"></div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span id="home-carousel-next-btn" class="visually-hidden"
+                  >Next</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- ABOUT PAGE -->
+        <div id="about-page" class="d-none">
+          <h1>About Page</h1>
+          <p class="bg-light p-3 w-100 rounded">
+            Welcome to Amit's Gallery Shop, where art and beauty come together
+            to create an exceptional shopping experience. At our gallery shop,
+            you'll find an incredible selection of high-quality artworks,
+            ranging from traditional to contemporary styles. From stunning
+            paintings and photographs to unique sculptures and handcrafted
+            pieces, we have something for everyone. Our mission is to bring the
+            beauty and joy of art to your life, whether you're a seasoned
+            collector or just starting out. Our knowledgeable staff is always on
+            hand to provide you with personalized recommendations and expert
+            advice. We invite you to browse our collection online or visit us in
+            person to experience the beauty of our artwork firsthand. Thank you
+            for choosing Amit's Gallery Shop for all your art needs.
+          </p>
 
+          <div class="col-md-10">
+            <h2 class="fs-5">
+              Here you will find an explanation of how the app works
+            </h2>
+          </div>
+          <hr />
+          <h3>
+            Any time you want you may click on a picture and it will show you
+            more information!
+          </h3>
+          <div class="p-5 border rounded h-25 bg-light center">
+            <div>
+              <h2 class="text-center">Slider (Carousel) Display</h2>
+              <p>
+                When on Slider Display, you may actually just as its name says!
+                Slide the pictures shown as much as you want! Be carefull not to
+                slide you computer tho...
+              </p>
+            </div>
+            <button
+              class="btn btn-dark border center rounded text-light"
+              id="about-to-home-carousel-btn"
+            >
+              Check Our Products!
+            </button>
+          </div>
+          <hr />
+          <div class="p-5 m-2 border rounded h-25 center bg-dark text-light">
+            <div class="px-4">
+              <h2 class="text-center">Gallery Display</h2>
+              <p>
+                When on Cards Display, you may watch the gallery and add your
+                wanted images to the cart! that way you'll be able to purchase
+                them once you are finished!
+              </p>
+            </div>
+            <button
+              class="btn btn-light border center rounded"
+              id="about-to-home-gallery-btn"
+            >
+              Check Our Products!
+            </button>
+          </div>
+          <hr />
+          <div class="p-5 m-2 border rounded h-25 bg-light center">
+            <div class="px-4">
+              <h2 class="text-center">List Display</h2>
+              <p>
+                When on Table Display, you may see the images as a list, if your
+                account set as a business account, you may also edit the images
+                or even add some!
+              </p>
+            </div>
+            <button
+              class="btn btn-dark border center rounded text-light"
+              id="about-to-home-list-btn"
+            >
+              Check Our Products!
+            </button>
+          </div>
+        </div>
+        <!-- LOGIN PAGE -->
+        <div id="login-page" class="d-none">
+          <h1>Login Page</h1>
+
+          <div class="col-12">
+            <label for="login-email"
+              >Email <span class="text-danger">*</span>
+            </label>
+            <input
+              placeholder="user@gmail.com"
+              id="login-email-input"
+              class="form-control"
+              name="login-email"
+              type="email"
+              autocomplete="off"
+            />
+            <span id="login-email-error" class="text-danger"></span>
+          </div>
+
+          <div class="col-12">
+            <label for="login-password"
+              >Password <span class="text-danger">*</span>
+            </label>
+            <input
+              placeholder="enter password"
+              id="login-password-input"
+              class="form-control"
+              name="login-password"
+              type="password"
+              autocomplete="off"
+            />
+            <span id="login-password-error" class="text-danger"></span>
+          </div>
+
+          <div class="col-12 my-1">
+            Not registered yet?
+            <a
+              id="link-to-register-page"
+              class="text-primary text-decoration-underline"
+              >Click here...</a
+            >
+          </div>
+          <div class="col-12">
+            <input
+              id="login-submit-btn"
+              type="button"
+              class="btn btn-primary col-12 my-2"
+              value="Login"
+            />
+
+            <input
+              type="button"
+              class="btn btn-danger col-12 mb-2"
+              value="Cancel"
+              id="login-cancel-btn"
+            />
+          </div>
+        </div>
+        <!-- REGISTER PAGE -->
+        <div id="register-page" class="d-none">
+          <h1>Register Page</h1>
+
+          <h6>Name</h6>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <label for="first-name-register-input"
+                >First Name<span class="text-danger">*</span></label
+              >
+              <input
+                class="form-control mb-2"
+                type="text"
+                name="first"
+                id="register-first-name-input"
+                minlength="2"
+                autocomplete="off"
+              />
+              <span id="register-first-name-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-first-name-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Name must Start with a capital case (ABCDE...)</li>
+                  <li>Name can containt only one capital case</li>
+                  <li>Field can contain lowercase letters (a-z)</li>
+                  <li>Field can contain digits (0-9)</li>
+                  <li>Field can contain hyphens (-) or whitespace</li>
+                  <li>Field must be between 2-256 charachters!</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="last-name-register-input"
+                >Last Name<span class="text-danger">*</span></label
+              >
+              <input
+                class="form-control mb-2"
+                type="text"
+                name="last"
+                id="register-last-name-input"
+                autocomplete="off"
+              />
+              <span id="register-last-name-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-last-name-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Name must Start with a capital case (ABCDE...)</li>
+                  <li>Name can containt only one capital case</li>
+                  <li>Field can contain lowercase letters (a-z)</li>
+                  <li>Field can contain digits (0-9)</li>
+                  <li>Field can contain hyphens (-) or whitespace</li>
+                  <li>Field must be between 2-256 charachters!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <h6>Address (Optional)</h6>
+          <div class="row">
+            <div class="col-12 col-md-6 col-xl-4">
+              <label for="state-register-input">State</label>
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="text"
+                name="state"
+                id="register-state-input"
+              />
+              <span id="register-state-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-state-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Field must Start with a capital case (ABCDE...)</li>
+                  <li>Field must contain letters only</li>
+                  <li>
+                    Field can contain more than one word (each word starts with
+                    a capital case)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <label for="country-register-input">Country</label>
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="text"
+                name="country"
+                id="register-country-input"
+              />
+              <span id="register-country-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-country-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Field must Start with a capital case (ABCDE...)</li>
+                  <li>Field must contain letters only</li>
+                  <li>
+                    Field can contain more than one word (each word starts with
+                    a capital case)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <label for="city-register-input">City</label>
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="text"
+                name="city"
+                id="register-city-input"
+              />
+              <span id="register-city-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-city-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Field must Start with a capital case (ABCDE...)</li>
+                  <li>Field must contain letters only</li>
+                  <li>
+                    Field can contain more than one word (each word starts with
+                    a capital case)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <label for="street-register-input">Street</label>
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="text"
+                name="street"
+                id="register-street-input"
+              />
+              <span id="register-street-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-street-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Field must Start with a capital case (ABCDE...)</li>
+                  <li>Field must contain letters only</li>
+                  <li>
+                    Field can contain more than one word (each word starts with
+                    a capital case)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <label for="house-register-input">House Number</label>
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="text"
+                name="house"
+                id="register-house-input"
+              />
+              <span id="register-house-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-house-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Field can digits (0-9)</li>
+                  <li>Field can contain lowercase letters (a-z)</li>
+                  <li>Field can contain uppercase letters (A-Z)</li>
+                  <li>Field can contain forward slashes (/).</li>
+                  <li>Field must contain only the allowed charachters</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <label for="zip-register-input"
+                >Zip Code (valid only for Israel)</label
+              >
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="text"
+                name="zip"
+                id="register-zip-input"
+              />
+              <span id="register-zip-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-zip-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Field can only contain digits (0-9)</li>
+                  <li>Field must contain at least 5 digits</li>
+                  <li>Field can contain up to 9 digits</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <h6>Means of contact</h6>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <label for="email-register-input"
+                >Email<span class="text-danger">*</span></label
+              >
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="text"
+                name="email"
+                id="register-email-input"
+                minlength="2"
+              />
+              <span id="register-email-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-email-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>
+                    Field must start with one or more characters that can be any
+                    of the following: lowercase letters (a-z), uppercase letters
+                    (A-Z), digits (0-9), underscores (_), periods (.), plus
+                    signs (+), or hyphens (-)
+                  </li>
+                  <li>
+                    Field must contain an at sign (@) after the first set of
+                    allowed characters
+                  </li>
+                  <li>
+                    After the at(@) sign, there must be one or more characters
+                    that can be any of the following: lowercase letters (a-z),
+                    uppercase letters (A-Z), digits (0-9), or hyphens (-)
+                  </li>
+                  <li>
+                    There must be a period (.) after the second set of allowed
+                    characters
+                  </li>
+                  <li>
+                    <span style="font-weight: bold"
+                      >examples: email@gmail.com, ema@gma.il</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="phone-register-input">Phone</label>
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="text"
+                name="phone"
+                id="register-phone-input"
+              />
+              <span id="register-phone-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-phone-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>Field can contain between 9-20 charachters</li>
+                  <li>Field must only contain digits (0-9)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <h6>Security</h6>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <label for="password-register-input"
+                >Password<span class="text-danger">*</span></label
+              >
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="password"
+                name="password"
+                id="register-password-input"
+                minlength="2"
+              />
+              <span id="register-password-error" class="text-danger"></span>
+              <div
+                class="d-none text-secondary alert alert-danger"
+                id="register-password-rules"
+              >
+                <ul>
+                  Rules:
+                  <li>
+                    Field must contain at least one lowercase letter (a-z)
+                  </li>
+                  <li>
+                    Field must contain at least one uppercase letter (A-Z)
+                  </li>
+                  <li>Field must contain at least one digit (0-9)</li>
+                  <li>
+                    Field must contain at least one special character, which can
+                    be any of the following: @, $, !, %, *, ?, or &
+                  </li>
+                  <li>
+                    Field can then contain any combination of uppercase letters,
+                    lowercase letters, digits, and special characters
+                  </li>
+                  <li>
+                    Field must be at least 8 characters long, and no longer than
+                    255 characters
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="password-reenter-register-input"
+                >Re-enter Password<span class="text-danger">*</span></label
+              >
+              <input
+                autocomplete="off"
+                class="form-control mb-2"
+                type="password"
+                name="passwordReEnter"
+                id="register-password-reenter-input"
+                minlength="2"
+              />
+              <span
+                id="register-password-reenter-error"
+                class="text-danger"
+              ></span>
+            </div>
+          </div>
+          <div class="center my-2">
+            <div>
+              <label for="isBiz-register-input"
+                >Business Client <i class="bi bi-briefcase"></i
+              ></label>
+              <input
+                autocomplete="off"
+                class="form-check-inline mb-2"
+                type="checkbox"
+                name="isBiz"
+                id="register-isBiz-input"
+              />
+            </div>
+          </div>
+          <div class="col-12 my-1">
+            Already Registered?
+            <a
+              id="link-to-login-page"
+              class="text-primary text-decoration-underline"
+              >Click here...</a
+            >
+          </div>
+          <input
+            autocomplete="off"
+            id="register-submit-btn"
+            type="button"
+            value="Submit"
+            class="btn btn-primary col-12 mb-2"
+            disabled=""
+          />
+          <input
+            autocomplete="off"
+            id="register-cancel-btn"
+            type="button"
+            value="Cancel"
+            class="btn btn-danger col-12 mb-2"
+          />
+        </div>
+        <!-- PROFILE PAGE -->
+        <div id="profile-page" class="d-none">
+          <h1>Profile Page</h1>
+
+          <div class="bg-light">
+            <!-- כותרות הרשמה -->
+            <div class="center pt-4">
+              <div class="col-12 col-md-10 col-xl-8">
+                <h1 class="text-center display-4">EDIT USER PAGE</h1>
+                <h2 class="fs-5">Hear you can edit your profile</h2>
+              </div>
+            </div>
+
+            <div class="center">
+              <form class="form col-12 col-md-10 col-xl-8 border p-2 rounded">
                 <h6>Name</h6>
                 <div class="row">
-                    <div class="col-12 col-md-6">
-                        <label for="first-name-register-input">First Name<span class="text-danger">*</span></label>
-                        <input class="form-control mb-2" type="text" name="first" id="register-first-name-input"
-                            minlength="2" autocomplete="off">
-                        <span id="register-first-name-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-first-name-rules">
-                            <ul>Rules:
-                                <li>Name must Start with a capital case (ABCDE...)</li>
-                                <li>Name can containt only one capital case</li>
-                                <li>Field can contain lowercase letters (a-z)</li>
-                                <li>Field can contain digits (0-9)</li>
-                                <li>Field can contain hyphens (-) or whitespace</li>
-                                <li>Field must be between 2-256 charachters!</li>
-                            </ul>
-                        </div>
+                  <div class="col-12 col-md-6">
+                    <label for="first-name-user-field"
+                      >First Name<span class="text-danger">*</span></label
+                    >
+
+                    <input
+                      class="form-control mb-2"
+                      type="text"
+                      name="first"
+                      id="profile-first-name-input"
+                      minlength="2"
+                      autocomplete="off"
+                    />
+                    <span
+                      id="profile-first-name-error"
+                      class="text-danger"
+                    ></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-first-name-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Name must Start with a capital case (ABCDE...)</li>
+                        <li>Name can containt only one capital case</li>
+                        <li>Field can contain lowercase letters (a-z)</li>
+                        <li>Field can contain digits (0-9)</li>
+                        <li>Field can contain hyphens (-) or whitespace</li>
+                        <li>Field must be between 2-256 charachters!</li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <label for="last-name-register-input">Last Name<span class="text-danger">*</span></label>
-                        <input class="form-control mb-2" type="text" name="last" id="register-last-name-input"
-                            autocomplete="off">
-                        <span id="register-last-name-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-last-name-rules">
-                            <ul>Rules:
-                                <li>Name must Start with a capital case (ABCDE...)</li>
-                                <li>Name can containt only one capital case</li>
-                                <li>Field can contain lowercase letters (a-z)</li>
-                                <li>Field can contain digits (0-9)</li>
-                                <li>Field can contain hyphens (-) or whitespace</li>
-                                <li>Field must be between 2-256 charachters!</li>
-                            </ul>
-                        </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="last-name-user-field"
+                      >Last Name<span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control mb-2"
+                      type="text"
+                      name="last"
+                      id="profile-last-name-input"
+                      autocomplete="off"
+                    />
+                    <span
+                      id="profile-last-name-error"
+                      class="text-danger"
+                    ></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-last-name-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Name must Start with a capital case (ABCDE...)</li>
+                        <li>Name can containt only one capital case</li>
+                        <li>Field can contain lowercase letters (a-z)</li>
+                        <li>Field can contain digits (0-9)</li>
+                        <li>Field can contain hyphens (-) or whitespace</li>
+                        <li>Field must be between 2-256 charachters!</li>
+                      </ul>
                     </div>
+                  </div>
                 </div>
-                <h6>Address (Optional)</h6>
+                <h6>Address</h6>
                 <div class="row">
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <label for="state-register-input">State</label>
-                        <input autocomplete="off" class="form-control mb-2" type="text" name="state"
-                            id="register-state-input">
-                        <span id="register-state-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-state-rules">
-                            <ul>Rules:
-                                <li>Field must Start with a capital case (ABCDE...)</li>
-                                <li>Field must contain letters only</li>
-                                <li>Field can contain more than one word (each word starts with a capital case)</li>
-                            </ul>
-                        </div>
+                  <div class="col-12 col-md-6 col-xl-4">
+                    <label for="state-user-field">State</label>
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="text"
+                      name="state"
+                      id="profile-state-input"
+                    />
+                    <span id="profile-state-error" class="text-danger"></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-state-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Field must Start with a capital case (ABCDE...)</li>
+                        <li>Field must contain letters only</li>
+                        <li>
+                          Field can contain more than one word (each word starts
+                          with a capital case)
+                        </li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <label for="country-register-input">Country</label>
-                        <input autocomplete="off" class="form-control mb-2" type="text" name="country"
-                            id="register-country-input">
-                        <span id="register-country-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-country-rules">
-                            <ul>Rules:
-                                <li>Field must Start with a capital case (ABCDE...)</li>
-                                <li>Field must contain letters only</li>
-                                <li>Field can contain more than one word (each word starts with a capital case)</li>
-                            </ul>
-                        </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4">
+                    <label for="country-user-field">Country</label>
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="text"
+                      name="country"
+                      id="profile-country-input"
+                    />
+                    <span id="profile-country-error" class="text-danger"></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-country-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Field must Start with a capital case (ABCDE...)</li>
+                        <li>Field must contain letters only</li>
+                        <li>
+                          Field can contain more than one word (each word starts
+                          with a capital case)
+                        </li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <label for="city-register-input">City</label>
-                        <input autocomplete="off" class="form-control mb-2" type="text" name="city"
-                            id="register-city-input">
-                        <span id="register-city-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-city-rules">
-                            <ul>Rules:
-                                <li>Field must Start with a capital case (ABCDE...)</li>
-                                <li>Field must contain letters only</li>
-                                <li>Field can contain more than one word (each word starts with a capital case)</li>
-                            </ul>
-                        </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4">
+                    <label for="city-user-field">City</label>
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="text"
+                      name="city"
+                      id="profile-city-input"
+                    />
+                    <span id="profile-city-error" class="text-danger"></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-city-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Field must Start with a capital case (ABCDE...)</li>
+                        <li>Field must contain letters only</li>
+                        <li>
+                          Field can contain more than one word (each word starts
+                          with a capital case)
+                        </li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <label for="street-register-input">Street</label>
-                        <input autocomplete="off" class="form-control mb-2" type="text" name="street"
-                            id="register-street-input">
-                        <span id="register-street-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-street-rules">
-                            <ul>Rules:
-                                <li>Field must Start with a capital case (ABCDE...)</li>
-                                <li>Field must contain letters only</li>
-                                <li>Field can contain more than one word (each word starts with a capital case)</li>
-                            </ul>
-                        </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4">
+                    <label for="street-user-field">Street</label>
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="text"
+                      name="street"
+                      id="profile-street-input"
+                    />
+                    <span id="profile-street-error" class="text-danger"></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-street-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Field must Start with a capital case (ABCDE...)</li>
+                        <li>Field must contain letters only</li>
+                        <li>
+                          Field can contain more than one word (each word starts
+                          with a capital case)
+                        </li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <label for="house-register-input">House Number</label>
-                        <input autocomplete="off" class="form-control mb-2" type="text" name="house"
-                            id="register-house-input">
-                        <span id="register-house-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-house-rules">
-                            <ul>Rules:
-                                <li>Field can digits (0-9)</li>
-                                <li>Field can contain lowercase letters
-                                    (a-z)</li>
-                                <li>Field can contain uppercase letters (A-Z)</li>
-                                <li>Field can contain forward slashes (/).</li>
-                                <li>Field must contain only the allowed charachters</li>
-                            </ul>
-                        </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4">
+                    <label for="house-user-field">House Number</label>
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="text"
+                      name="house"
+                      id="profile-house-input"
+                    />
+                    <span id="profile-house-error" class="text-danger"></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-house-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Field can digits (0-9)</li>
+                        <li>Field can contain lowercase letters (a-z)</li>
+                        <li>Field can contain uppercase letters (A-Z)</li>
+                        <li>Field can contain forward slashes (/).</li>
+                        <li>Field must contain only the allowed charachters</li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <label for="zip-register-input">Zip Code (valid only for Israel)</label>
-                        <input autocomplete="off" class="form-control mb-2" type="text" name="zip"
-                            id="register-zip-input">
-                        <span id="register-zip-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-zip-rules">
-                            <ul>Rules:
-                                <li> Field can only contain digits (0-9)</li>
-                                <li>Field must contain at least 5 digits</li>
-                                <li>Field can contain up to 9 digits</li>
-                            </ul>
-                        </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-4">
+                    <label for="zip-user-field">Zip Code</label>
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="text"
+                      name="zip"
+                      id="profile-zip-input"
+                    />
+                    <span id="profile-zip-error" class="text-danger"></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-zip-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Field can only contain digits (0-9)</li>
+                        <li>Field must contain at least 5 digits</li>
+                        <li>Field can contain up to 9 digits</li>
+                      </ul>
                     </div>
+                  </div>
                 </div>
                 <h6>Means of contact</h6>
                 <div class="row">
-                    <div class="col-12 col-md-6">
-                        <label for="email-register-input">Email<span class="text-danger">*</span></label>
-                        <input autocomplete="off" class="form-control mb-2" type="text" name="email"
-                            id="register-email-input" minlength="2">
-                        <span id="register-email-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-email-rules">
-                            <ul>Rules:
-                                <li>Field must start with one or more characters that can be any of the following:
-                                    lowercase letters (a-z), uppercase letters (A-Z), digits (0-9), underscores (_),
-                                    periods (.), plus signs (+), or hyphens (-)</li>
-                                <li>Field must contain an at sign (@) after the first set of allowed characters</li>
-                                <li>After the at(@) sign, there must be one or more characters that can be any of the
-                                    following: lowercase letters (a-z), uppercase letters (A-Z), digits (0-9), or
-                                    hyphens (-)</li>
-                                <li>There must be a period (.) after the second set of allowed characters</li>
-                                <li><span style="font-weight:bold">examples: email@gmail.com, ema@gma.il</span></li>
-                            </ul>
-                        </div>
+                  <div class="col-12 col-md-6">
+                    <label for="email-user-field"
+                      >Email<span class="text-danger">*</span></label
+                    >
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="text"
+                      name="email"
+                      id="profile-email-input"
+                      minlength="2"
+                      disabled=""
+                    />
+                    <span id="profile-email-error" class="text-danger"></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-email-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>
+                          Field must start with one or more characters that can
+                          be any of the following: lowercase letters (a-z),
+                          uppercase letters (A-Z), digits (0-9), underscores
+                          (_), periods (.), plus signs (+), or hyphens (-)
+                        </li>
+                        <li>
+                          Field must contain an at sign (@) after the first set
+                          of allowed characters
+                        </li>
+                        <li>
+                          After the at(@) sign, there must be one or more
+                          characters that can be any of the following: lowercase
+                          letters (a-z), uppercase letters (A-Z), digits (0-9),
+                          or hyphens (-)
+                        </li>
+                        <li>
+                          There must be a period (.) after the second set of
+                          allowed characters
+                        </li>
+                        <li>
+                          <span style="font-weight: bold"
+                            >examples: email@gmail.com, ema@gma.il</span
+                          >
+                        </li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <label for="phone-register-input">Phone</label>
-                        <input autocomplete="off" class="form-control mb-2" type="text" name="phone"
-                            id="register-phone-input">
-                        <span id="register-phone-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-phone-rules">
-                            <ul>Rules:
-                                <li>Field can contain between 9-20 charachters</li>
-                                <li>Field must only contain digits (0-9)</li>
-                            </ul>
-                        </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="phone-user-field">Phone</label>
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="text"
+                      name="phone"
+                      id="profile-phone-input"
+                    />
+                    <span id="profile-phone-error" class="text-danger"></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-phone-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>Field can contain between 9-20 charachters</li>
+                        <li>Field must only contain digits (0-9)</li>
+                      </ul>
                     </div>
-                </div>
-                <h6>Security</h6>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <label for="password-register-input">Password<span class="text-danger">*</span></label>
-                        <input autocomplete="off" class="form-control mb-2" type="password" name="password"
-                            id="register-password-input" minlength="2">
-                        <span id="register-password-error" class="text-danger"></span>
-                        <div class="d-none text-secondary alert alert-danger" id="register-password-rules">
-                            <ul>Rules:
-                                <li>Field must contain at least one lowercase letter (a-z)</li>
-                                <li>Field must contain at least one uppercase letter (A-Z)</li>
-                                <li>Field must contain at least one digit (0-9)</li>
-                                <li>Field must contain at least one special character, which can be any of the
-                                    following: @, $, !, %, *, ?, or &</li>
-                                <li>Field can then contain any combination of uppercase letters, lowercase letters,
-                                    digits, and special characters</li>
-                                <li>Field must be at least 8 characters long, and no longer than 255 characters</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <label for="password-reenter-register-input">Re-enter Password<span
-                                class="text-danger">*</span></label>
-                        <input autocomplete="off" class="form-control mb-2" type="password" name="passwordReEnter"
-                            id="register-password-reenter-input" minlength="2">
-                        <span id="register-password-reenter-error" class="text-danger"></span>
-                    </div>
+                  </div>
                 </div>
                 <div class="center my-2">
-                    <div>
-                        <label for="isBiz-register-input">Business Client <i class="bi bi-briefcase"></i></label>
-                        <input autocomplete="off" class="form-check-inline mb-2" type="checkbox" name="isBiz"
-                            id="register-isBiz-input">
+                  <div>
+                    <label for="isBiz-user-field"
+                      >Business Client <i class="bi bi-briefcase"></i
+                    ></label>
+                    <input
+                      autocomplete="off"
+                      class="form-check-inline mb-2"
+                      type="checkbox"
+                      name="isBiz"
+                      id="profile-isBiz-input"
+                    />
+                  </div>
+                </div>
+                <div id="profile-password-box">
+                  <div class="col-12 col-md-6">
+                    <label class="text-warning" for="password-profile-input"
+                      >Password</label
+                    >
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="password"
+                      name="password"
+                      id="profile-password-input"
+                      minlength="2"
+                      disabled="true"
+                    />
+                    <span
+                      id="profile-password-error"
+                      class="text-danger"
+                    ></span>
+                    <div
+                      class="d-none text-secondary alert alert-danger"
+                      id="profile-password-rules"
+                    >
+                      <ul>
+                        Rules:
+                        <li>
+                          Field must contain at least one lowercase letter (a-z)
+                        </li>
+                        <li>
+                          Field must contain at least one uppercase letter (A-Z)
+                        </li>
+                        <li>Field must contain at least one digit (0-9)</li>
+                        <li>
+                          Field must contain at least one special character,
+                          which can be any of the following: @, $, !, %, *, ?,
+                          or &
+                        </li>
+                        <li>
+                          Field can then contain any combination of uppercase
+                          letters, lowercase letters, digits, and special
+                          characters
+                        </li>
+                        <li>
+                          Field must be at least 8 characters long, and no
+                          longer than 255 characters
+                        </li>
+                      </ul>
                     </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label
+                      class="text-warning"
+                      for="password-reenter-profile-input"
+                      >Re-enter Password</label
+                    >
+                    <input
+                      autocomplete="off"
+                      class="form-control mb-2"
+                      type="password"
+                      name="passwordReEnter"
+                      id="profile-password-reenter-input"
+                      minlength="2"
+                      disabled="true"
+                    />
+                    <span
+                      id="profile-password-reenter-error"
+                      class="text-danger"
+                    ></span>
+                  </div>
                 </div>
-                <div class="col-12 my-1">
-                    Already Registered?
-                    <a id="link-to-login-page" class="text-primary text-decoration-underline">Click here...</a>
-                </div>
-                <input autocomplete="off" id="register-submit-btn" type="button" value="Submit"
-                    class="btn btn-primary col-12 mb-2" disabled="">
-                <input autocomplete="off" id="register-cancel-btn" type="button" value="Cancel"
-                    class="btn btn-danger col-12 mb-2">
-
+                <input
+                  autocomplete="off"
+                  id="profile-submit-btn"
+                  type="button"
+                  value="Submit"
+                  class="btn btn-primary col-12 mb-2"
+                />
+                <input
+                  autocomplete="off"
+                  id="profile-cancel-btn"
+                  type="button"
+                  value="Cancel"
+                  class="btn btn-danger col-12 mb-2"
+                />
+                <input
+                  autocomplete="off"
+                  id="profile-password-btn"
+                  type="button"
+                  value="Change Password or Email"
+                  class="btn btn-warning col-12 mb-2"
+                />
+              </form>
             </div>
-            <!-- PROFILE PAGE -->
-            <div id="profile-page" class="d-none">
-                <h1>Profile Page</h1>
-
-                <div class="bg-light">
-                    <!-- כותרות הרשמה -->
-                    <div class="center pt-4">
-                        <div class="col-12 col-md-10 col-xl-8">
-                            <h1 class="text-center display-4">EDIT USER PAGE</h1>
-                            <h2 class="fs-5">Hear you can edit your profile</h2>
-                        </div>
-                    </div>
-
-                    <div class="center">
-                        <form class="form col-12 col-md-10 col-xl-8 border p-2 rounded">
-                            <h6>Name</h6>
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <label for="first-name-user-field">First Name<span
-                                            class="text-danger">*</span></label>
-
-                                    <input class="form-control mb-2" type="text" name="first"
-                                        id="profile-first-name-input" minlength="2" autocomplete="off">
-                                    <span id="profile-first-name-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-first-name-rules">
-                                        <ul>Rules:
-                                            <li>Name must Start with a capital case (ABCDE...)</li>
-                                            <li>Name can containt only one capital case</li>
-                                            <li>Field can contain lowercase letters (a-z)</li>
-                                            <li>Field can contain digits (0-9)</li>
-                                            <li>Field can contain hyphens (-) or whitespace</li>
-                                            <li>Field must be between 2-256 charachters!</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <label for="last-name-user-field">Last Name<span
-                                            class="text-danger">*</span></label>
-                                    <input class="form-control mb-2" type="text" name="last"
-                                        id="profile-last-name-input" autocomplete="off">
-                                    <span id="profile-last-name-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-last-name-rules">
-                                        <ul>Rules:
-                                            <li>Name must Start with a capital case (ABCDE...)</li>
-                                            <li>Name can containt only one capital case</li>
-                                            <li>Field can contain lowercase letters (a-z)</li>
-                                            <li>Field can contain digits (0-9)</li>
-                                            <li>Field can contain hyphens (-) or whitespace</li>
-                                            <li>Field must be between 2-256 charachters!</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <h6>Address</h6>
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-xl-4">
-                                    <label for="state-user-field">State</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="text" name="state"
-                                        id="profile-state-input">
-                                    <span id="profile-state-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-state-rules">
-                                        <ul>Rules:
-                                            <li>Field must Start with a capital case (ABCDE...)</li>
-                                            <li>Field must contain letters only</li>
-                                            <li>Field can contain more than one word (each word starts with a capital
-                                                case)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-xl-4">
-                                    <label for="country-user-field">Country</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="text" name="country"
-                                        id="profile-country-input">
-                                    <span id="profile-country-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-country-rules">
-                                        <ul>Rules:
-                                            <li>Field must Start with a capital case (ABCDE...)</li>
-                                            <li>Field must contain letters only</li>
-                                            <li>Field can contain more than one word (each word starts with a capital
-                                                case)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-xl-4">
-                                    <label for="city-user-field">City</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="text" name="city"
-                                        id="profile-city-input">
-                                    <span id="profile-city-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-city-rules">
-                                        <ul>Rules:
-                                            <li>Field must Start with a capital case (ABCDE...)</li>
-                                            <li>Field must contain letters only</li>
-                                            <li>Field can contain more than one word (each word starts with a capital
-                                                case)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-xl-4">
-                                    <label for="street-user-field">Street</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="text" name="street"
-                                        id="profile-street-input">
-                                    <span id="profile-street-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-street-rules">
-                                        <ul>Rules:
-                                            <li>Field must Start with a capital case (ABCDE...)</li>
-                                            <li>Field must contain letters only</li>
-                                            <li>Field can contain more than one word (each word starts with a capital
-                                                case)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-xl-4">
-                                    <label for="house-user-field">House Number</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="text" name="house"
-                                        id="profile-house-input">
-                                    <span id="profile-house-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-house-rules">
-                                        <ul>Rules:
-                                            <li>Field can digits (0-9)</li>
-                                            <li>Field can contain lowercase letters
-                                                (a-z)</li>
-                                            <li>Field can contain uppercase letters (A-Z)</li>
-                                            <li>Field can contain forward slashes (/).</li>
-                                            <li>Field must contain only the allowed charachters</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-xl-4">
-                                    <label for="zip-user-field">Zip Code</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="text" name="zip"
-                                        id="profile-zip-input">
-                                    <span id="profile-zip-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-zip-rules">
-                                        <ul>Rules:
-                                            <li> Field can only contain digits (0-9)</li>
-                                            <li>Field must contain at least 5 digits</li>
-                                            <li>Field can contain up to 9 digits</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <h6>Means of contact</h6>
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <label for="email-user-field">Email<span class="text-danger">*</span></label>
-                                    <input autocomplete="off" class="form-control mb-2" type="text" name="email"
-                                        id="profile-email-input" minlength="2" disabled="">
-                                    <span id="profile-email-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-email-rules">
-                                        <ul>Rules:
-                                            <li>Field must start with one or more characters that can be any of the
-                                                following:
-                                                lowercase letters (a-z), uppercase letters (A-Z), digits (0-9),
-                                                underscores (_),
-                                                periods (.), plus signs (+), or hyphens (-)</li>
-                                            <li>Field must contain an at sign (@) after the first set of allowed
-                                                characters</li>
-                                            <li>After the at(@) sign, there must be one or more characters that can be
-                                                any of the
-                                                following: lowercase letters (a-z), uppercase letters (A-Z), digits
-                                                (0-9), or
-                                                hyphens (-)</li>
-                                            <li>There must be a period (.) after the second set of allowed characters
-                                            </li>
-                                            <li><span style="font-weight:bold">examples: email@gmail.com,
-                                                    ema@gma.il</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <label for="phone-user-field">Phone</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="text" name="phone"
-                                        id="profile-phone-input">
-                                    <span id="profile-phone-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-phone-rules">
-                                        <ul>Rules:
-                                            <li>Field can contain between 9-20 charachters</li>
-                                            <li>Field must only contain digits (0-9)</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="center my-2">
-                                <div>
-                                    <label for="isBiz-user-field">Business Client <i
-                                            class="bi bi-briefcase"></i></label>
-                                    <input autocomplete="off" class="form-check-inline mb-2" type="checkbox"
-                                        name="isBiz" id="profile-isBiz-input">
-                                </div>
-                            </div>
-                            <div id="profile-password-box">
-                                <div class="col-12 col-md-6">
-                                    <label class="text-warning" for="password-profile-input">Password</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="password" name="password"
-                                        id="profile-password-input" minlength="2" disabled="true">
-                                    <span id="profile-password-error" class="text-danger"></span>
-                                    <div class="d-none text-secondary alert alert-danger" id="profile-password-rules">
-                                        <ul>Rules:
-                                            <li>Field must contain at least one lowercase letter (a-z)</li>
-                                            <li>Field must contain at least one uppercase letter (A-Z)</li>
-                                            <li>Field must contain at least one digit (0-9)</li>
-                                            <li>Field must contain at least one special character, which can be any of
-                                                the
-                                                following: @, $, !, %, *, ?, or &</li>
-                                            <li>Field can then contain any combination of uppercase letters, lowercase
-                                                letters,
-                                                digits, and special characters</li>
-                                            <li>Field must be at least 8 characters long, and no longer than 255
-                                                characters</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <label class="text-warning" for="password-reenter-profile-input">Re-enter
-                                        Password</label>
-                                    <input autocomplete="off" class="form-control mb-2" type="password"
-                                        name="passwordReEnter" id="profile-password-reenter-input" minlength="2"
-                                        disabled="true">
-                                    <span id="profile-password-reenter-error" class="text-danger"></span>
-                                </div>
-                            </div>
-                            <input autocomplete="off" id="profile-submit-btn" type="button" value="Submit"
-                                class="btn btn-primary col-12 mb-2">
-                            <input autocomplete="off" id="profile-cancel-btn" type="button" value="Cancel"
-                                class="btn btn-danger col-12 mb-2">
-                            <input autocomplete="off" id="profile-password-btn" type="button"
-                                value="Change Password or Email" class="btn btn-warning col-12 mb-2">
-                        </form>
-                    </div>
-                </div>
-
+          </div>
+        </div>
+        <!-- PAGE 404 NOT FOUND PAGE -->
+        <div id="page404-page" class="d-none">
+          <div class="d-flex align-items-center justify-content-center vh-100">
+            <div class="text-center">
+              <h1 class="display-1 fw-bold">404</h1>
+              <p class="fs-3">
+                <span class="text-danger">Opps!</span> Page not found.
+              </p>
+              <p class="lead">The page you’re looking for doesn’t exist.</p>
+              <a href="#" id="page404-to-home-link" class="btn btn-primary"
+                >Go Home</a
+              >
             </div>
-            <!-- PAGE 404 NOT FOUND PAGE -->
-            <div id="page404-page" class="d-none">
-                <div class="d-flex align-items-center justify-content-center vh-100">
-                    <div class="text-center">
-                        <h1 class="display-1 fw-bold">404</h1>
-                        <p class="fs-3"> <span class="text-danger">Opps!</span> Page not found.</p>
-                        <p class="lead">
-                            The page you’re looking for doesn’t exist.
-                        </p>
-                        <a href="#" id="page404-to-home-link" class="btn btn-primary">Go Home</a>
-                    </div>
-                </div>
-            </div>
-        </main>
+          </div>
+        </div>
+      </main>
     </div>
-    <br><br>
+    <br /><br />
     <footer>
-        <div class="bg-primary text-center text-light footer">Created by Amit Segal ©</div>
+      <div class="bg-primary text-center text-light footer">
+        Created by Amit Segal ©
+      </div>
     </footer>
     <script src="../app.js" type="module"></script>
-</body>
-
+  </body>
 </html>

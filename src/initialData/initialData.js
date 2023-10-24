@@ -19,7 +19,7 @@ const createData = () => {
     new Picture(
       picId++,
       "Kitties",
-      "https://cdn.pixabay.com/photo/2023/01/23/09/26/cat-7738210_640.jpg",
+      "../../public/assets/imgs/cat-flower.jpg",
       "John Wick",
       `A cute and curious gray and white cat sitting in a grassy garden with vibrant pink and purple flowers in the background. The cat is sitting on a patch of lush green grass, and it appears to be gazing off into the distance, with its head tilted slightly to one side. Its ears are perked up and its eyes are bright and alert`,
       20,
@@ -80,6 +80,5 @@ const setInitialUsers = () => {
   localStorage.setItem("nextuserid", userId + "");
   localStorage.removeItem("token");
 };
-
 setInitialData();
 setInitialUsers();
